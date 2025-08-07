@@ -72,7 +72,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section id="inicio" className="relative bg-gradient-to-br from-green-50 to-green-500">
+      <section id="inicio" className="relative bg-gradient-to-br from-green-50 to-green-500 h-[86dvh] flex justify-center items-center">
         <img src="/banner.jpg" className="absolute w-full h-full object-cover opacity-30" />
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
@@ -91,29 +91,6 @@ export default function Home() {
               <Button size="lg" variant="outline" className="border-green-600 text-green-600 hover:bg-green-50 px-8 py-3" onClick={() => window.location.href = '/contacto'}>
                 Contactar
               </Button>
-            </div>
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Globe className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Alcance Mundial</h3>
-                <p className="text-gray-600">Fabricantes de prestigio internacional</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Truck className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Envío Directo</h3>
-                <p className="text-gray-600">Desde las fábricas hasta su laboratorio</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <GraduationCap className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Capacitación</h3>
-                <p className="text-gray-600">Entrenamiento especializado incluido</p>
-              </div>
             </div>
           </div>
         </div>
@@ -279,54 +256,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-                  <Microscope className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-lg font-bold">ImportLiliMLab</span>
-              </div>
-              <p className="text-gray-300">
-                Especialistas en equipamiento científico y analítico para laboratorios.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Productos</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>Microscopios</li>
-                <li>Equipos de Análisis</li>
-                <li>Material de Vidrio</li>
-                <li>Equipos Eléctricos</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Servicios</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>Importación</li>
-                <li>Instalación</li>
-                <li>Capacitación</li>
-                <li>Soporte Técnico</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Contacto</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>+1 (555) 123-4567</li>
-                <li>info@importlilimlab.com</li>
-                <li>Ciudad, País</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2024 ImportLiliMLab. Todos los derechos reservados.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
