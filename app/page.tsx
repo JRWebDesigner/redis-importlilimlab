@@ -237,7 +237,7 @@ export default function Home() {
                 <Phone className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Teléfono</h3>
-              <p className="text-gray-300">+1 (555) 123-4567</p>
+              <p className="text-gray-300">+591 62437743</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -251,7 +251,7 @@ export default function Home() {
                 <MapPin className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Ubicación</h3>
-              <p className="text-gray-300">Ciudad, País</p>
+              <p className="text-gray-300">Bolivia, La Paz</p>
             </div>
           </div>
         </div>
