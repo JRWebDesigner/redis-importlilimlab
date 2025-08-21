@@ -1,261 +1,352 @@
 'use client';
 import Link from 'next/link'
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { 
+  Beaker,
   Microscope, 
   FlaskConical, 
-  TestTube, 
-  Zap, 
-  Globe, 
-  Award, 
-  Truck, 
-  GraduationCap,
-  Phone,
-  Mail,
-  MapPin,
-  CheckCircle
+  Thermometer,
+  Award,
+  Users,
+  Clock,
+  CheckCircle,
+  Target,
+  Eye
 } from 'lucide-react';
 
-export default function Home() {
+// Animation variants
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
+
+const fadeInLeft = {
+  initial: { opacity: 0, x: -60 },
+  animate: { opacity: 1, x: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
+
+const fadeInRight = {
+  initial: { opacity: 0, x: 60 },
+  animate: { opacity: 1, x: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const scaleIn = {
+  initial: { opacity: 0, scale: 0.8 },
+  animate: { opacity: 1, scale: 1 },
+  transition: { duration: 0.5, ease: "easeOut" }
+};
+
+export default function HomePage() {
   const products = [
     {
-      category: "Microscopios",
-      description: "Microscopios ópticos y electrónicos de alta precisión",
+      title: "Equipos de Análisis",
       icon: Microscope,
-      items: ["Microscopios biológicos", "Microscopios estéreo", "Microscopios digitales", "Accesorios y lentes"]
+      items: ["Microscopios", "Espectrofotómetros", "Balanzas analíticas", "pH metros"]
     },
     {
-      category: "Equipos de Análisis",
-      description: "Instrumentos analíticos de última generación",
+      title: "Material de Vidrio",
       icon: FlaskConical,
-      items: ["Espectrofotómetros", "Cromatógrafos", "Balanzas analíticas", "pH metros"]
+      items: ["Matraces", "Pipetas", "Buretas", "Probetas graduadas"]
     },
     {
-      category: "Material de Vidrio",
-      description: "Cristalería de laboratorio de calidad premium",
-      icon: TestTube,
-      items: ["Matraces y vasos", "Pipetas y buretas", "Tubos de ensayo", "Placas petri"]
+      title: "Instrumentos de Medición",
+      icon: Thermometer,
+      items: ["Termómetros", "Calibradores", "Medidores", "Sensores"]
     },
     {
-      category: "Equipos Eléctricos",
-      description: "Instrumentos eléctricos y electrónicos especializados",
-      icon: Zap,
-      items: ["Centrífugas", "Incubadoras", "Autoclaves", "Agitadores magnéticos"]
+      title: "Reactivos y Químicos",
+      icon: Beaker,
+      items: ["Reactivos analíticos", "Estándares", "Soluciones buffer", "Indicadores"]
     }
   ];
 
-  const services = [
+  const features = [
     {
-      icon: Globe,
-      title: "Fabricantes de Prestigio Mundial",
-      description: "Contamos con el respaldo de los mejores fabricantes internacionales de equipamiento científico."
-    },
-    {
-      icon: Truck,
-      title: "Envío Directo desde Fábricas",
-      description: "Ofrecemos la posibilidad de enviar equipos directamente desde las fábricas para mayor eficiencia."
-    },
-    {
-      icon: GraduationCap,
-      title: "Capacitación y Entrenamiento",
-      description: "Brindamos capacitación especializada según las necesidades de cada equipo y especialidad."
-    },
-    {
-      icon: Award,
       title: "Calidad Garantizada",
-      description: "Todos nuestros productos cuentan con garantía y soporte técnico especializado."
+      description: "Productos certificados con estándares internacionales de calidad",
+      icon: Award
+    },
+    {
+      title: "Soporte Técnico",
+      description: "Equipo especializado para instalación y mantenimiento",
+      icon: Users
+    },
+    {
+      title: "Entrega Rápida",
+      description: "Tiempos de entrega optimizados para tu laboratorio",
+      icon: Clock
+    },
+    {
+      title: "Garantía Extendida",
+      description: "Respaldo completo en todos nuestros equipos",
+      icon: CheckCircle
     }
   ];
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section id="inicio" className="relative bg-gradient-to-br from-green-50 to-green-500 h-[86dvh] flex justify-center items-center">
-        <img src="/banner.jpg" className="absolute w-full h-full object-cover opacity-30" />
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Equipamiento e Instalación de
-              <span className="text-green-700"> Laboratorios</span>
-            </h2>
-            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
-              Nos dedicamos íntegramente a la comercialización de instrumental científico y analítico, 
-              con el respaldo de fabricantes de prestigio mundial.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-3" onClick={() => window.location.href = '/productos'}>
-                Ver Catálogo
-              </Button>
-              <Button size="lg" variant="outline" className="border-green-600 text-green-600 hover:bg-green-50 px-8 py-3" onClick={() => window.location.href = '/contacto'}>
-                Contactar
-              </Button>
-            </div>
+      <section className="relative py-20 bg-gradient-to-br from-lime-50 to-white overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-10">
+          <img
+            src="/banner.jpg"
+            alt="Laboratory equipment background"
+            className="w-full h-full object-cover opacity-80"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-lime-50/60 to-white/60"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div {...fadeInLeft}>
+              <motion.h1 
+                className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                Import <span className="text-lime-500">Lilimlab</span>
+              </motion.h1>
+              <motion.p 
+                className="text-xl text-gray-600 mb-8 leading-relaxed"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                Una empresa de equipamiento e instalación de equipos y suministros de laboratorio. 
+                Estamos dedicados íntegramente a la comercialización de instrumental científico y analítico.
+              </motion.p>
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <Button size="lg" className="bg-lime-600 hover:bg-lime-700 text-white">
+                  Ver Productos
+                </Button>
+                <Button size="lg" variant="outline" className="border-lime-600 text-lime-600 hover:bg-lime-50">
+                  Contactar Ahora
+                </Button>
+              </motion.div>
+            </motion.div>
+            <motion.div className="relative" {...fadeInRight}>
+              <div className="bg-white rounded-2xl shadow-2xl p-8">
+                <img
+                  src="https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Equipos de laboratorio"
+                  className="w-full h-64 object-cover rounded-lg"
+                />
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Products Catalog */}
-      <section id="productos" className="py-20 bg-white">
+      {/* Features Section */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Nuestro Catálogo de Productos
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Ofrecemos una amplia gama de equipamiento científico y analítico para laboratorios
-            </p>
-          </div>
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">¿Por qué elegir Import Lilimlab?</h2>
+            <p className="text-lg text-gray-600">Contamos con el soporte de fabricantes de prestigio mundial</p>
+          </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            {features.map((feature, index) => {
+              const IconComponent = feature.icon;
+              return (
+                <motion.div 
+                  key={index} 
+                  className="text-center group hover:transform hover:scale-105 transition-transform duration-300"
+                  variants={scaleIn}
+                  whileHover={{ y: -5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors">
+                    <IconComponent className="w-10 h-10 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
+                  <p className="text-gray-600">{feature.description}</p>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Products Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Nuestros Productos</h2>
+            <p className="text-lg text-gray-600">Equipamiento científico y analítico de la más alta calidad</p>
+          </motion.div>
+          
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
             {products.map((product, index) => {
               const IconComponent = product.icon;
               return (
-                <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-green-100 hover:border-green-300">
+                <motion.div key={index} variants={scaleIn}>
+                  <Card className="hover:shadow-lg transition-shadow duration-300 border-green-100 hover:border-green-300 h-full">
                   <CardHeader className="text-center">
                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="w-8 h-8 text-green-600" />
                     </div>
-                    <CardTitle className="text-green-800">{product.category}</CardTitle>
-                    <CardDescription>{product.description}</CardDescription>
+                    <CardTitle className="text-xl text-gray-900">{product.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2">
                       {product.items.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-center text-sm text-gray-600">
+                        <li key={itemIndex} className="flex items-center text-gray-600">
                           <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                           {item}
                         </li>
                       ))}
                     </ul>
+                    <Button variant="outline" className="w-full mt-4 border-green-600 text-green-600 hover:bg-green-50">
+                      Ver Productos
+                    </Button>
                   </CardContent>
                 </Card>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="servicios" className="py-20 bg-green-50">
+      {/* Mission & Vision Section */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Nuestros Servicios
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Brindamos un servicio integral desde la selección hasta la instalación y capacitación
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => {
-              const IconComponent = service.icon;
-              return (
-                <div key={index} className="text-center">
-                  <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <IconComponent className="w-10 h-10 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-                  <p className="text-gray-600">{service.description}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <motion.div
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <Card className="border-lime-100 h-full">
+              <CardHeader>
+                <div className="w-16 h-16 bg-lime-500 rounded-full flex items-center justify-center mb-4">
+                  <Target className="w-8 h-8 text-white" />
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Acerca de ImportLiliMLab
-              </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Somos una empresa especializada en la importación y comercialización de equipamiento 
-                científico y analítico de alta calidad. Nos dedicamos íntegramente a brindar 
-                soluciones integrales para laboratorios.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-500 mt-1" />
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Fabricantes de Prestigio Mundial</h4>
-                    <p className="text-gray-600">Trabajamos con las mejores marcas internacionales</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-500 mt-1" />
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Envío Directo</h4>
-                    <p className="text-gray-600">Desde las fábricas hasta su ubicación</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-500 mt-1" />
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Capacitación Especializada</h4>
-                    <p className="text-gray-600">Entrenamiento según especialidades</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-green-100 rounded-2xl p-8">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Award className="w-12 h-12 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Calidad Garantizada</h3>
-                <p className="text-gray-600 mb-6">
-                  Todos nuestros productos cuentan con garantía internacional y soporte técnico especializado
+                <CardTitle className="text-2xl text-gray-900">Nuestra Misión</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 leading-relaxed">
+                  Proveer equipamiento científico y analítico de la más alta calidad, 
+                  brindando soluciones integrales para laboratorios con el respaldo 
+                  de fabricantes de prestigio mundial y un servicio técnico especializado.
                 </p>
-                <Badge className="bg-green-600 text-white px-4 py-2">
-                  +15 años de experiencia
-                </Badge>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <Card className="border-lime-100 h-full">
+              <CardHeader>
+                <div className="w-16 h-16 bg-lime-500 rounded-full flex items-center justify-center mb-4">
+                  <Eye className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-2xl text-gray-900">Nuestra Visión</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 leading-relaxed">
+                  Ser la empresa líder en la comercialización de instrumental científico 
+                  y analítico, reconocida por la excelencia en nuestros productos y 
+                  servicios, contribuyendo al desarrollo científico y tecnológico del país.
+                </p>
+              </CardContent>
+            </Card>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contacto" className="py-20 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Contáctanos</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Estamos aquí para ayudarte con tus necesidades de equipamiento de laboratorio
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Teléfono</h3>
-              <p className="text-gray-300">+591 62437743</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Email</h3>
-              <p className="text-gray-300">info@importlilimlab.com</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Ubicación</h3>
-              <p className="text-gray-300">Bolivia, La Paz</p>
-            </div>
-          </div>
+      {/* CTA Section */}
+      <motion.section 
+        className="py-16 bg-lime-600"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h2 
+            className="text-3xl font-bold text-white mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            ¿Listo para equipar tu laboratorio?
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-lime-100 mb-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Contáctanos para obtener información detallada sobre precios y especificaciones de nuestros equipos.
+          </motion.p>
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <Button size="lg" variant="secondary" className="bg-white text-lime-600 hover:bg-gray-100">
+              <Link href="https://wa.link/ryfuv1" className="w-full h-full flex items-center">Consultar por WhatsApp</Link>
+            </Button>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
+
     </div>
   );
 }

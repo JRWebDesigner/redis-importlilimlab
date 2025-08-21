@@ -1,12 +1,20 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import Link from 'next/link'
 export default function Header(){
   return(
-    <header className="bg-white shadow-sm border-b border-green-100 py-3">
+      <motion.header 
+        className="bg-white shadow-sm border-b border-green-100 p-4"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-3">
+            <Link href="/" className="flex items-center space-x-3">
               <img src="/logo.png" className="w-[240px] h-auto" />
-            </div>
+            </Link>
             <nav className="hidden md:flex space-x-8">
               <Link href="/" className="text-gray-700 hover:text-green-600 transition-colors">Inicio</Link>
               <Link href="/productos" className="text-gray-700 hover:text-green-600 transition-colors">Productos</Link>
@@ -15,6 +23,6 @@ export default function Header(){
             </nav>
           </div>
         </div>
-     </header>
+      </motion.header>
   )
 }

@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link'
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -16,6 +18,27 @@ import {
   Send,
   CheckCircle
 } from 'lucide-react';
+
+// Animation variants
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const scaleIn = {
+  initial: { opacity: 0, scale: 0.8 },
+  animate: { opacity: 1, scale: 1 },
+  transition: { duration: 0.5, ease: "easeOut" }
+};
 
 export default function ContactoPage() {
   const [formData, setFormData] = useState({
@@ -47,25 +70,25 @@ export default function ContactoPage() {
     {
       icon: Phone,
       title: "Teléfono",
-      details: ["+1 (555) 123-4567", "+1 (555) 123-4568"],
-      description: "Lunes a Viernes: 8:00 AM - 6:00 PM"
+      details: ["+591 62437743"],
+      description: "Lunes a Viernes: 9:00 AM - 6:00 PM"
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["info@importlilimlab.com", "ventas@importlilimlab.com"],
+      details: ["info@importlilimlab.com"],
       description: "Respuesta en menos de 24 horas"
     },
     {
       icon: MapPin,
       title: "Oficina Principal",
-      details: ["Av. Científica 123", "Ciudad, País 12345"],
+      details: ["La Paz, Bolivia", "Santa Cruz, Bolivia"],
       description: "Visitas con cita previa"
     },
     {
       icon: Clock,
       title: "Horarios de Atención",
-      details: ["Lunes - Viernes: 8:00 AM - 6:00 PM", "Sábados: 9:00 AM - 1:00 PM"],
+      details: ["Lunes - Viernes: 9:00 AM - 6:00 PM"],
       description: "Soporte técnico 24/7"
     }
   ];
@@ -98,26 +121,38 @@ export default function ContactoPage() {
       {/* Page Header */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Contáctanos
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Estamos aquí para ayudarte con tus necesidades de equipamiento de laboratorio. 
-              Nuestro equipo de especialistas está listo para asesorarte.
+              Contáctanos para obtener información detallada sobre precios y especificaciones.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Contact Info Cards */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
             {contactInfo.map((info, index) => {
               const IconComponent = info.icon;
               return (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                <motion.div key={index} variants={scaleIn}>
+                  <Card className="text-center hover:shadow-lg transition-shadow h-full">
                   <CardHeader>
                     <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="w-8 h-8 text-white" />
@@ -133,9 +168,10 @@ export default function ContactoPage() {
                     <p className="text-sm text-gray-600">{info.description}</p>
                   </CardContent>
                 </Card>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -144,7 +180,12 @@ export default function ContactoPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Envíanos un Mensaje</h2>
               <p className="text-gray-600 mb-8">
                 Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas.
@@ -240,20 +281,16 @@ export default function ContactoPage() {
                   Enviar Mensaje
                 </Button>
               </form>
-            </div>
+            </motion.div>
 
             {/* Map and Additional Info */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Nuestra Ubicación</h2>
-              
-              {/* Map Placeholder */}
-              <div className="bg-gray-200 rounded-lg h-64 mb-8 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                  <p className="text-gray-600">Mapa Interactivo</p>
-                  <p className="text-sm text-gray-500">Av. Científica 123, Ciudad, País</p>
-                </div>
-              </div>
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+            
 
               {/* Additional Information */}
               <div className="space-y-6">
@@ -265,19 +302,19 @@ export default function ContactoPage() {
                     <ul className="space-y-3">
                       <li className="flex items-start space-x-3">
                         <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Más de 15 años de experiencia en el sector</span>
+                        <span className="text-gray-700">Dedicados íntegramente a la comercialización de instrumental científico</span>
                       </li>
                       <li className="flex items-start space-x-3">
                         <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Red global de fabricantes certificados</span>
+                        <span className="text-gray-700">Soporte de fabricantes de prestigio mundial</span>
                       </li>
                       <li className="flex items-start space-x-3">
                         <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Soporte técnico especializado 24/7</span>
+                        <span className="text-gray-700">Envío directo desde las fábricas</span>
                       </li>
                       <li className="flex items-start space-x-3">
                         <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">Garantía internacional en todos los productos</span>
+                        <span className="text-gray-700">Capacitación y entrenamiento especializado</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -291,11 +328,11 @@ export default function ContactoPage() {
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <span className="text-gray-700">Lunes - Viernes:</span>
-                        <span className="font-medium">8:00 AM - 6:00 PM</span>
+                        <span className="font-medium">9:00 AM - 6:00 PM</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-700">Sábados:</span>
-                        <span className="font-medium">9:00 AM - 1:00 PM</span>
+                        <span className="font-medium">Cerrado</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-700">Domingos:</span>
@@ -310,80 +347,34 @@ export default function ContactoPage() {
                   </CardContent>
                 </Card>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-green-600">
+      <motion.section 
+        className="py-16 bg-lime-600"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            ¿Necesitas una cotización urgente?
+            ¿Necesitas información sobre precios?
           </h2>
           <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
-            Llámanos directamente y uno de nuestros especialistas te atenderá de inmediato.
+            Contáctanos por WhatsApp y uno de nuestros especialistas te proporcionará información detallada sobre precios y especificaciones.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="bg-white text-green-600 hover:bg-gray-100">
-              <Phone className="w-5 h-5 mr-2" />
-              +1 (555) 123-4567
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600">
-              <Mail className="w-5 h-5 mr-2" />
-              info@importlilimlab.com
+            <Button size="lg" variant="secondary" className="bg-white text-green-900 hover:bg-gray-100">
+              <Link href="https://wa.link/ryfuv1" className="w-full h-full flex items-center">Consultar por WhatsApp</Link>
             </Button>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-                  <Microscope className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-lg font-bold">ImportLiliMLab</span>
-              </div>
-              <p className="text-gray-300">
-                Especialistas en equipamiento científico y analítico para laboratorios.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Productos</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>Microscopios</li>
-                <li>Equipos de Análisis</li>
-                <li>Material de Vidrio</li>
-                <li>Equipos Eléctricos</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Servicios</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>Importación</li>
-                <li>Instalación</li>
-                <li>Capacitación</li>
-                <li>Soporte Técnico</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Contacto</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>+1 (555) 123-4567</li>
-                <li>info@importlilimlab.com</li>
-                <li>Ciudad, País</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2024 ImportLiliMLab. Todos los derechos reservados.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

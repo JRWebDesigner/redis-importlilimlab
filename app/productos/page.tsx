@@ -1,11 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link'
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { 
+  Microscope, 
   FlaskConical, 
   TestTube, 
   Zap, 
@@ -15,10 +18,37 @@ import {
   ArrowLeft
 } from 'lucide-react';
 
+// Animation variants
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const scaleIn = {
+  initial: { opacity: 0, scale: 0.8 },
+  animate: { opacity: 1, scale: 1 },
+  transition: { duration: 0.5, ease: "easeOut" }
+};
+
 export default function ProductosPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const products = [
+    {
+      category: "Microscopios",
+      description: "Microscopios ópticos y electrónicos de alta precisión",
+      icon: Microscope,
+      items: ["Microscopios biológicos", "Microscopios estéreo", "Microscopios digitales", "Accesorios y lentes"]
+    },
     {
       category: "Equipos de Análisis",
       description: "Instrumentos analíticos de última generación",
@@ -44,7 +74,6 @@ export default function ProductosPage() {
       id: 1,
       name: "Microscopio Biológico Trinocular BM-180T",
       category: "Microscopios",
-      price: "$2,850",
       description: "Microscopio biológico trinocular profesional con iluminación LED, ideal para laboratorios de investigación y educación superior.",
       features: [
         "Objetivos acromáticos 4x, 10x, 40x, 100x",
@@ -71,7 +100,6 @@ export default function ProductosPage() {
       id: 2,
       name: "Espectrofotómetro UV-Vis SP-2000",
       category: "Equipos de Análisis",
-      price: "$4,200",
       description: "Espectrofotómetro UV-Visible de doble haz con software avanzado para análisis cuantitativo y cualitativo de alta precisión.",
       features: [
         "Rango espectral: 190-1100 nm",
@@ -165,7 +193,12 @@ export default function ProductosPage() {
           <div>
             <div className="flex items-center justify-between mb-4">
               <Badge className="bg-green-100 text-green-800">{product.category}</Badge>
-              <span className="text-3xl font-bold text-green-600 hidden">{product.price}</span>
+              <div className="text-right">
+                <p className="text-sm text-gray-600 mb-1">Precio disponible por consulta</p>
+                <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white">
+                  Consultar por WhatsApp
+                </Button>
+              </div>
             </div>
           </div>
 
@@ -197,7 +230,7 @@ export default function ProductosPage() {
 
           <div className="flex space-x-4">
             <Button className="flex-1 bg-green-600 hover:bg-green-700">
-              Solicitar Cotización
+              Consultar por WhatsApp
             </Button>
             <Button variant="outline" className="flex-1 border-green-600 text-green-600 hover:bg-green-50">
               Más Información
@@ -211,7 +244,12 @@ export default function ProductosPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Breadcrumb */}
-      <div className="bg-green-50 py-4">
+      <motion.div 
+        className="bg-green-50 py-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-2 text-sm">
             <a href="/" className="text-green-600 hover:text-green-700">Inicio</a>
@@ -219,33 +257,51 @@ export default function ProductosPage() {
             <span className="text-gray-700">Productos</span>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Page Header */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Nuestros Productos
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Descubre nuestra amplia gama de equipamiento científico y analítico de los mejores fabricantes mundiales
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Featured Products */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Productos Destacados</h2>
             <p className="text-lg text-gray-600">Equipos de alta calidad con especificaciones técnicas detalladas</p>
-          </div>
+          </motion.div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
             {featuredProducts.map((product) => (
-              <Card key={product.id} className="hover:shadow-xl transition-shadow duration-300">
+              <motion.div key={product.id} variants={scaleIn}>
+                <Card className="hover:shadow-xl transition-shadow duration-300 h-full">
                 <CardHeader>
                   <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden mb-4">
                     <img
@@ -256,7 +312,6 @@ export default function ProductosPage() {
                   </div>
                   <div className="flex items-center justify-between">
                     <Badge className="bg-green-100 text-green-800">{product.category}</Badge>
-                    <span className="text-2xl font-bold text-green-600 hidden">{product.price}</span>
                   </div>
                   <CardTitle className="text-xl text-gray-900">{product.name}</CardTitle>
                   <CardDescription className="text-gray-600">
@@ -283,24 +338,38 @@ export default function ProductosPage() {
                   </Dialog>
                 </CardContent>
               </Card>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Product Categories */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Categorías de Productos</h2>
             <p className="text-lg text-gray-600">Explora nuestras diferentes líneas de equipamiento</p>
-          </div>
+          </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
             {products.map((product, index) => {
               const IconComponent = product.icon;
               return (
-                <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-green-100 hover:border-green-300">
+                <motion.div key={index} variants={scaleIn}>
+                  <Card className="hover:shadow-lg transition-shadow duration-300 border-green-100 hover:border-green-300 h-full">
                   <CardHeader className="text-center">
                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="w-8 h-8 text-green-600" />
@@ -322,14 +391,21 @@ export default function ProductosPage() {
                     </Button>
                   </CardContent>
                 </Card>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-green-600">
+      <motion.section 
+        className="py-16 bg-lime-600"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             ¿No encuentras lo que buscas?
@@ -339,14 +415,11 @@ export default function ProductosPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="bg-white text-green-600 hover:bg-gray-100">
-              Solicitar Cotización
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600">
-              Contactar Especialista
+              <Link href="https://wa.link/u2slo1" className="w-full h-full flex items-center">Solicitar Cotizacion</Link>
             </Button>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }
