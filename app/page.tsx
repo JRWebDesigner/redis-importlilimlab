@@ -138,10 +138,10 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 <Button size="lg" className="bg-lime-600 hover:bg-lime-700 text-white">
-                  Ver Productos
+                  <Link href="/productos" className="w-full h-full flex items-center justify-center">Ver Productos</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="border-lime-600 text-lime-600 hover:bg-lime-50">
-                  Contactar Ahora
+                  <Link href="/contacto" className="w-full h-full flex items-center justify-center">Contactar Ahora</Link>
                 </Button>
               </motion.div>
             </motion.div>
