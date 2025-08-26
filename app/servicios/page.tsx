@@ -163,7 +163,7 @@ export default function AboutUsPage() {
               Sobre Nosotros
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Conozca más sobre n-innovations biosupply bol. ltda., nuestra misión, visión y compromiso con la calidad
+              Conozca más sobre import lilimlab, nuestra misión, visión y compromiso con la calidad
             </p>
           </motion.div>
         </div>
