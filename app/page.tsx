@@ -4,6 +4,12 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import { Autoplay, EffectCards } from 'swiper/modules';
+
 import { 
   Beaker,
   Microscope, 
@@ -146,13 +152,42 @@ export default function HomePage() {
               </motion.div>
             </motion.div>
             <motion.div className="relative" {...fadeInRight}>
-              <div className="bg-white rounded-2xl shadow-2xl p-8">
-                <img
-                  src="https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Equipos de laboratorio"
-                  className="w-full h-64 object-cover rounded-lg"
-                />
+              <div className="">
+                
               </div>
+              <Swiper
+                effect={'cards'}
+                grabCursor={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                loop={true}
+                modules={[Autoplay, EffectCards]}
+                className="bg-green-950 rounded-2xl shadow-2xl p-8"
+              >
+                <SwiperSlide className="w-full h-64 object-cover rounded-xl p-4 bg-blue-500">
+                  <img
+                    src="https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Equipos de laboratorio"
+                    className="w-full h-64 object-cover rounded-lg"
+                  />
+                </SwiperSlide>
+                 <SwiperSlide className="w-full h-64 object-cover rounded-xl p-4 bg-green-500">
+                  <img
+                    src="/img2.jpg"
+                    alt="Equipos de laboratorio"
+                    className="w-full h-64 object-cover rounded-lg"
+                  />
+                </SwiperSlide>
+                 <SwiperSlide className="w-full h-64 object-cover rounded-xl p-4 bg-orange-500">
+                  <img
+                    src="/img3.jpg"
+                    alt="Equipos de laboratorio"
+                    className="w-full h-64 object-cover rounded-lg"
+                  />
+                </SwiperSlide>
+              </Swiper>
             </motion.div>
           </div>
         </div>
