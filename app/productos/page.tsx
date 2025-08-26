@@ -194,7 +194,6 @@ export default function ProductosPage() {
             <div className="flex items-center justify-between mb-4">
               <Badge className="bg-green-100 text-green-800">{product.category}</Badge>
               <div className="text-right">
-                <p className="text-sm text-gray-600 mb-1">Precio disponible por consulta</p>
                 <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white">
                   Consultar por WhatsApp
                 </Button>
@@ -232,14 +231,22 @@ export default function ProductosPage() {
             <Button className="flex-1 bg-green-600 hover:bg-green-700">
               Consultar por WhatsApp
             </Button>
-            <Button variant="outline" className="flex-1 border-green-600 text-green-600 hover:bg-green-50">
-              Más Información
-            </Button>
           </div>
         </div>
       </div>
     </DialogContent>
   );
+
+  // NUEVO: Estado para filtro (sin paginación)
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  // Obtener categorías únicas
+  const categories = Array.from(new Set(featuredProducts.map(p => p.category)));
+
+  // Filtrar productos por categoría
+  const filteredProducts = selectedCategory
+    ? featuredProducts.filter(p => p.category === selectedCategory)
+    : featuredProducts;
 
   return (
     <div className="min-h-screen bg-white">
@@ -278,6 +285,27 @@ export default function ProductosPage() {
         </div>
       </section>
 
+      {/* Filtro de Categorías */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <div className="flex flex-wrap gap-2 justify-center">
+          <Button
+            variant={selectedCategory === null ? "default" : "outline"}
+            onClick={() => { setSelectedCategory(null); }}
+          >
+            Todas
+          </Button>
+          {categories.map(cat => (
+            <Button
+              key={cat}
+              variant={selectedCategory === cat ? "default" : "outline"}
+              onClick={() => { setSelectedCategory(cat); }}
+            >
+              {cat}
+            </Button>
+          ))}
+        </div>
+      </section>
+
       {/* Featured Products */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -293,13 +321,13 @@ export default function ProductosPage() {
           </motion.div>
           
           <motion.div 
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+            className="grid grid-cols-2 lg:grid-cols-3 gap-8"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
           >
-            {featuredProducts.map((product) => (
+            {filteredProducts.map((product) => (
               <motion.div key={product.id} variants={scaleIn}>
                 <Card className="hover:shadow-xl transition-shadow duration-300 h-full">
                 <CardHeader>
@@ -313,21 +341,10 @@ export default function ProductosPage() {
                   <div className="flex items-center justify-between">
                     <Badge className="bg-green-100 text-green-800">{product.category}</Badge>
                   </div>
-                  <CardTitle className="text-xl text-gray-900">{product.name}</CardTitle>
-                  <CardDescription className="text-gray-600">
-                    {product.description}
-                  </CardDescription>
+                  <CardTitle className="text-xl md:text-2xl text-gray-900">{product.name}</CardTitle>
+                 
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-3 mb-6">
-                    {product.features.slice(0, 3).map((feature, index) => (
-                      <div key={index} className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                        <span className="text-sm text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
                   <Dialog>
                     <DialogTrigger asChild>
                       <Button className="w-full bg-green-600 hover:bg-green-700">
