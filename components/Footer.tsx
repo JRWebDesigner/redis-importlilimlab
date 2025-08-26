@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link'
 import { motion } from 'framer-motion';
 import { 
   Beaker, 
@@ -25,12 +26,12 @@ export default function Footer(){
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4">Servicios</h3>
+              <h3 className="text-lg font-semibold mb-4">Menu</h3>
               <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-green-400 transition-colors">Instalación</a></li>
-                <li><a href="#" className="hover:text-green-400 transition-colors">Mantenimiento</a></li>
-                <li><a href="#" className="hover:text-green-400 transition-colors">Calibración</a></li>
-                <li><a href="#" className="hover:text-green-400 transition-colors">Soporte Técnico</a></li>
+                <li><Link href="/" className="hover:text-green-400 transition-colors">Inicio</Link></li>
+                <li><Link href="/servicios" className="hover:text-green-400 transition-colors">Sobre Nosotros</Link></li>
+                <li><Link href="/productos" className="hover:text-green-400 transition-colors">Productos</Link></li>
+                <li><Link href="/contacto" className="hover:text-green-400 transition-colors">Contactos</Link></li>
               </ul>
             </div>
             <div>
