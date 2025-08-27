@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link'
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { 
   Microscope, 
@@ -15,7 +15,9 @@ import {
   ChevronLeft,
   ChevronRight,
   CheckCircle,
-  ArrowLeft
+  ArrowLeft,
+  Search,
+  Filter
 } from 'lucide-react';
 
 // Animation variants
@@ -40,7 +42,121 @@ const scaleIn = {
 };
 
 export default function ProductosPage() {
+  const featuredProducts = [
+    {
+      id: 1,
+      name: "Microscopio Biológico Trinocular BM-180T",
+      category: "Microscopios",
+      description: "Microscopio biológico trinocular profesional con iluminación LED, ideal para laboratorios de investigación y educación superior.",
+      keywords: ["microscopio", "biológico", "trinocular", "LED", "investigación", "educación"],
+      features: [
+        "Objetivos acromáticos 4x, 10x, 40x, 100x",
+        "Oculares WF10x/18mm",
+        "Iluminación LED de 3W con control de intensidad",
+        "Condensador Abbe N.A. 1.25 con diafragma iris",
+        "Platina mecánica de 140x130mm",
+        "Enfoque coaxial macro y micrométrico"
+      ],
+      specifications: {
+        "Magnificación": "40x - 1000x",
+        "Sistema óptico": "Infinito corregido",
+        "Tubo": "Trinocular 30°",
+        "Iluminación": "LED 3W",
+        "Peso": "8.5 kg"
+      },
+      images: [
+        "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/8942977/pexels-photo-8942977.jpeg?auto=compress&cs=tinysrgb&w=800"
+      ]
+    },
+    {
+      id: 2,
+      name: "Espectrofotómetro UV-Vis SP-2000",
+      category: "Equipos de Análisis",
+      description: "Espectrofotómetro UV-Visible de doble haz con software avanzado para análisis cuantitativo y cualitativo de alta precisión.",
+      keywords: ["espectrofotómetro", "UV", "visible", "análisis", "cuantitativo", "cualitativo", "precisión"],
+      features: [
+        "Rango espectral: 190-1100 nm",
+        "Ancho de banda espectral: 1.8 nm",
+        "Exactitud fotométrica: ±0.002 Abs",
+        "Software PC con base de datos integrada",
+        "Compartimento de muestras termostatizado",
+        "Lámpara de deuterio y tungsteno"
+      ],
+      specifications: {
+        "Rango espectral": "190-1100 nm",
+        "Resolución": "1.8 nm",
+        "Exactitud": "±0.002 Abs",
+        "Reproducibilidad": "±0.001 Abs",
+        "Dimensiones": "650x450x280 mm"
+      },
+      images: [
+        "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/3735780/pexels-photo-3735780.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/8942978/pexels-photo-8942978.jpeg?auto=compress&cs=tinysrgb&w=800"
+      ]
+    },
+    {
+      id: 3,
+      name: "Balanza Analítica Digital BA-220",
+      category: "Equipos de Análisis",
+      description: "Balanza analítica de precisión con pantalla LCD y calibración automática, ideal para mediciones exactas en laboratorio.",
+      keywords: ["balanza", "analítica", "digital", "precisión", "LCD", "calibración", "medición"],
+      features: [
+        "Capacidad: 220g con precisión de 0.1mg",
+        "Pantalla LCD retroiluminada",
+        "Calibración automática interna",
+        "Cámara de pesaje con puertas corredizas",
+        "Interfaz RS-232 para conexión a PC",
+        "Funciones estadísticas integradas"
+      ],
+      specifications: {
+        "Capacidad máxima": "220g",
+        "Precisión": "0.1mg",
+        "Repetibilidad": "±0.1mg",
+        "Tiempo de estabilización": "3 segundos",
+        "Dimensiones": "350x215x320 mm"
+      },
+      images: [
+        "https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/8942977/pexels-photo-8942977.jpeg?auto=compress&cs=tinysrgb&w=800"
+      ]
+    },
+    {
+      id: 4,
+      name: "Centrífuga de Mesa CM-800",
+      category: "Equipos Eléctricos",
+      description: "Centrífuga de mesa de alta velocidad con rotor de ángulo fijo, ideal para separación de muestras biológicas.",
+      keywords: ["centrífuga", "mesa", "alta velocidad", "rotor", "separación", "biológicas", "muestras"],
+      features: [
+        "Velocidad máxima: 15,000 RPM",
+        "Capacidad: 24 tubos de 1.5/2.0ml",
+        "Control digital de velocidad y tiempo",
+        "Sistema de seguridad con tapa de bloqueo",
+        "Motor sin escobillas de larga duración",
+        "Operación silenciosa < 58dB"
+      ],
+      specifications: {
+        "Velocidad máxima": "15,000 RPM",
+        "Capacidad": "24 tubos",
+        "Fuerza centrífuga": "21,380 x g",
+        "Nivel de ruido": "< 58dB",
+        "Dimensiones": "280x260x180 mm"
+      },
+      images: [
+        "https://images.pexels.com/photos/8942977/pexels-photo-8942977.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/3735780/pexels-photo-3735780.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800"
+      ]
+    }
+  ];
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('Todas');
+  const [filteredProducts, setFilteredProducts] = useState(featuredProducts);
 
   const products = [
     {
@@ -69,60 +185,25 @@ export default function ProductosPage() {
     }
   ];
 
-  const featuredProducts = [
-    {
-      id: 1,
-      name: "Microscopio Biológico Trinocular BM-180T",
-      category: "Microscopios",
-      description: "Microscopio biológico trinocular profesional con iluminación LED, ideal para laboratorios de investigación y educación superior.",
-      features: [
-        "Objetivos acromáticos 4x, 10x, 40x, 100x",
-        "Oculares WF10x/18mm",
-        "Iluminación LED de 3W con control de intensidad",
-        "Condensador Abbe N.A. 1.25 con diafragma iris",
-        "Platina mecánica de 140x130mm",
-        "Enfoque coaxial macro y micrométrico"
-      ],
-      specifications: {
-        "Magnificación": "40x - 1000x",
-        "Sistema óptico": "Infinito corregido",
-        "Tubo": "Trinocular 30°",
-        "Iluminación": "LED 3W",
-        "Peso": "8.5 kg"
-      },
-      images: [
-        "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/8942977/pexels-photo-8942977.jpeg?auto=compress&cs=tinysrgb&w=800"
-      ]
-    },
-    {
-      id: 2,
-      name: "Espectrofotómetro UV-Vis SP-2000",
-      category: "Equipos de Análisis",
-      description: "Espectrofotómetro UV-Visible de doble haz con software avanzado para análisis cuantitativo y cualitativo de alta precisión.",
-      features: [
-        "Rango espectral: 190-1100 nm",
-        "Ancho de banda espectral: 1.8 nm",
-        "Exactitud fotométrica: ±0.002 Abs",
-        "Software PC con base de datos integrada",
-        "Compartimento de muestras termostatizado",
-        "Lámpara de deuterio y tungsteno"
-      ],
-      specifications: {
-        "Rango espectral": "190-1100 nm",
-        "Resolución": "1.8 nm",
-        "Exactitud": "±0.002 Abs",
-        "Reproducibilidad": "±0.001 Abs",
-        "Dimensiones": "650x450x280 mm"
-      },
-      images: [
-        "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/3735780/pexels-photo-3735780.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/8942978/pexels-photo-8942978.jpeg?auto=compress&cs=tinysrgb&w=800"
-      ]
-    }
-  ];
+
+  const categories = ['Todas', ...products.map(p => p.category)];
+
+  // Efecto para filtrar productos cuando cambian los filtros
+  useEffect(() => {
+    let filtered = featuredProducts.filter(product => {
+      const matchesSearch = searchTerm === '' || 
+        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm.toLowerCase()));
+      
+      const matchesCategory = selectedCategory === 'Todas' || product.category === selectedCategory;
+      
+      return matchesSearch && matchesCategory;
+    });
+    
+    setFilteredProducts(filtered);
+  }, [searchTerm, selectedCategory]);
+
 
   const ProductCarousel = ({ images, productName }: { images: string[], productName: string }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -194,6 +275,7 @@ export default function ProductosPage() {
             <div className="flex items-center justify-between mb-4">
               <Badge className="bg-green-100 text-green-800">{product.category}</Badge>
               <div className="text-right">
+                <p className="text-sm text-gray-600 mb-1">Precio disponible por consulta</p>
                 <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white">
                   Consultar por WhatsApp
                 </Button>
@@ -231,25 +313,45 @@ export default function ProductosPage() {
             <Button className="flex-1 bg-green-600 hover:bg-green-700">
               Consultar por WhatsApp
             </Button>
+            <Button variant="outline" className="flex-1 border-green-600 text-green-600 hover:bg-green-50">
+              Más Información
+            </Button>
           </div>
         </div>
       </div>
     </DialogContent>
   );
 
-  // NUEVO: Estado para filtro (sin paginación)
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-
-  // Obtener categorías únicas
-  const categories = Array.from(new Set(featuredProducts.map(p => p.category)));
-
-  // Filtrar productos por categoría
-  const filteredProducts = selectedCategory
-    ? featuredProducts.filter(p => p.category === selectedCategory)
-    : featuredProducts;
-
   return (
     <div className="min-h-screen bg-white">
+      {/* Header */}
+      <motion.header 
+        className="bg-white shadow-sm border-b border-green-100"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                <Microscope className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h1 className="text-xl font-bold text-gray-900">Import Lilimlab</h1>
+                <p className="text-sm text-green-600">Equipamiento Científico</p>
+              </div>
+            </div>
+            <nav className="hidden md:flex space-x-8">
+              <a href="/" className="text-gray-700 hover:text-green-600 transition-colors">Inicio</a>
+              <a href="/productos" className="text-green-600 font-semibold">Productos</a>
+              <a href="/servicios" className="text-gray-700 hover:text-green-600 transition-colors">Servicios</a>
+              <a href="/contacto" className="text-gray-700 hover:text-green-600 transition-colors">Contacto</a>
+            </nav>
+          </div>
+        </div>
+      </motion.header>
+
       {/* Breadcrumb */}
       <motion.div 
         className="bg-green-50 py-4"
@@ -285,24 +387,64 @@ export default function ProductosPage() {
         </div>
       </section>
 
-      {/* Filtro de Categorías */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-        <div className="flex flex-wrap gap-2 justify-center">
-          <Button
-            variant={selectedCategory === null ? "default" : "outline"}
-            onClick={() => { setSelectedCategory(null); }}
+      {/* Search and Filter Section */}
+      <section className="py-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="flex flex-col md:flex-row gap-6 items-center justify-between"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
           >
-            Todas
-          </Button>
-          {categories.map(cat => (
-            <Button
-              key={cat}
-              variant={selectedCategory === cat ? "default" : "outline"}
-              onClick={() => { setSelectedCategory(cat); }}
-            >
-              {cat}
-            </Button>
-          ))}
+            {/* Search Bar */}
+            <div className="relative flex-1 max-w-md">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <Input
+                type="text"
+                placeholder="Buscar productos..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10 pr-4 py-2 w-full border-green-200 focus:border-green-500 focus:ring-green-500"
+              />
+            </div>
+
+            {/* Category Filter */}
+            <div className="flex items-center space-x-2">
+              <Filter className="w-5 h-5 text-gray-600" />
+              <span className="text-sm font-medium text-gray-700">Filtrar por:</span>
+              <div className="flex flex-wrap gap-2">
+                {categories.map((category) => (
+                  <Button
+                    key={category}
+                    variant={selectedCategory === category ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedCategory(category)}
+                    className={selectedCategory === category 
+                      ? "bg-green-600 hover:bg-green-700 text-white" 
+                      : "border-green-600 text-green-600 hover:bg-green-50"
+                    }
+                  >
+                    {category}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Results Counter */}
+          <motion.div 
+            className="mt-4 text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.8 }}
+          >
+            <p className="text-gray-600">
+              {filteredProducts.length === 0 
+                ? "No se encontraron productos que coincidan con tu búsqueda" 
+                : `Mostrando ${filteredProducts.length} producto${filteredProducts.length !== 1 ? 's' : ''}`
+              }
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -320,44 +462,82 @@ export default function ProductosPage() {
             <p className="text-lg text-gray-600">Equipos de alta calidad con especificaciones técnicas detalladas</p>
           </motion.div>
           
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            {filteredProducts.map((product) => (
-              <motion.div key={product.id} variants={scaleIn}>
-                <Card className="hover:shadow-xl transition-shadow duration-300 h-full">
-                <CardHeader>
-                  <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden mb-4">
-                    <img
-                      src={product.images[0]}
-                      alt={product.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <Badge className="bg-green-100 text-green-800">{product.category}</Badge>
-                  </div>
-                  <CardTitle className="text-xl md:text-2xl text-gray-900">{product.name}</CardTitle>
-                 
-                </CardHeader>
-                <CardContent>
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button className="w-full bg-green-600 hover:bg-green-700">
-                        Ver Detalles Completos
-                      </Button>
-                    </DialogTrigger>
-                    <ProductDetailModal product={product} />
-                  </Dialog>
-                </CardContent>
-              </Card>
-              </motion.div>
-            ))}
-          </motion.div>
+          {filteredProducts.length > 0 ? (
+            <motion.div 
+              className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
+              {filteredProducts.map((product) => (
+                <motion.div key={product.id} variants={scaleIn}>
+                  <Card className="hover:shadow-xl transition-shadow duration-300 h-full">
+                  <CardHeader>
+                    <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden mb-4">
+                      <img
+                        src={product.images[0]}
+                        alt={product.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <Badge className="bg-green-100 text-green-800">{product.category}</Badge>
+                    </div>
+                    <CardTitle className="text-xl text-gray-900">{product.name}</CardTitle>
+                    <CardDescription className="text-gray-600">
+                      {product.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3 mb-6">
+                      {product.features.slice(0, 3).map((feature, index) => (
+                        <div key={index} className="flex items-center space-x-2">
+                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                          <span className="text-sm text-gray-700">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button className="w-full bg-green-600 hover:bg-green-700">
+                          Ver Detalles Completos
+                        </Button>
+                      </DialogTrigger>
+                      <ProductDetailModal product={product} />
+                    </Dialog>
+                  </CardContent>
+                </Card>
+                </motion.div>
+              ))}
+            </motion.div>
+          ) : (
+            <motion.div 
+              className="text-center py-12"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Search className="w-12 h-12 text-gray-400" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">No se encontraron productos</h3>
+              <p className="text-gray-600 mb-6">
+                Intenta con otros términos de búsqueda o selecciona una categoría diferente.
+              </p>
+              <Button 
+                onClick={() => {
+                  setSearchTerm('');
+                  setSelectedCategory('Todas');
+                }}
+                variant="outline"
+                className="border-green-600 text-green-600 hover:bg-green-50"
+              >
+                Limpiar filtros
+              </Button>
+            </motion.div>
+          )}
         </div>
       </section>
 
@@ -417,7 +597,7 @@ export default function ProductosPage() {
 
       {/* CTA Section */}
       <motion.section 
-        className="py-16 bg-lime-600"
+        className="py-16 bg-green-600"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -432,11 +612,62 @@ export default function ProductosPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="bg-white text-green-600 hover:bg-gray-100">
-              <Link href="https://wa.link/u2slo1" className="w-full h-full flex items-center">Solicitar Cotizacion</Link>
+              Solicitar Cotización
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600">
+              Contactar Especialista
             </Button>
           </div>
         </div>
       </motion.section>
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                  <Microscope className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-lg font-bold">Import Lilimlab</span>
+              </div>
+              <p className="text-gray-300">
+                Una empresa de equipamiento e instalación de equipos y suministros de laboratorio.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Productos</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li>Microscopios</li>
+                <li>Equipos de Análisis</li>
+                <li>Material de Vidrio</li>
+                <li>Equipos Eléctricos</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Servicios</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li>Importación</li>
+                <li>Instalación</li>
+                <li>Capacitación</li>
+                <li>Soporte Técnico</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Contacto</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li>+1 (555) 123-4567</li>
+                <li>info@importlilimlab.com</li>
+                <li>Ciudad, País</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+            <p>&copy; 2024 ImportLiliMLab. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -16,6 +16,7 @@ import {
   FlaskConical, 
   Thermometer,
   Award,
+  ShieldAlert,
   Users,
   Clock,
   CheckCircle,
@@ -77,6 +78,11 @@ export default function HomePage() {
       title: "Reactivos y Químicos",
       icon: Beaker,
       items: ["Reactivos analíticos", "Estándares", "Soluciones buffer", "Indicadores"]
+    },
+    {
+      title: "Reactivos de Grado Industrial",
+      icon: ShieldAlert,
+      items: ["Solventes orgánicos", "Sales inorgánicas", "Reactivos para síntesis", "Indicadores químicos"]
     }
   ];
 
@@ -238,7 +244,7 @@ export default function HomePage() {
 
       {/* Products Section */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
@@ -251,7 +257,7 @@ export default function HomePage() {
           </motion.div>
           
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:flex items-center justify-center gap-8 flex-wrap"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
@@ -261,7 +267,7 @@ export default function HomePage() {
               const IconComponent = product.icon;
               return (
                 <motion.div key={index} variants={scaleIn}>
-                  <Card className="hover:shadow-lg transition-shadow duration-300 border-green-100 hover:border-green-300 h-full">
+                  <Card className="hover:shadow-lg transition-shadow duration-300 border-green-100 hover:border-green-300 h-full lg:w-[300px]">
                   <CardHeader className="text-center">
                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="w-8 h-8 text-green-600" />
