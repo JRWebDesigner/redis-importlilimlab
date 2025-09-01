@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { CheckCircle } from 'lucide-react';
 import ProductCarousel from './ProductCarousel';
+import Link from 'next/link'
 
 export default function ProductDetailModal({ product }: { product: any }) {
   return (
@@ -21,12 +22,7 @@ export default function ProductDetailModal({ product }: { product: any }) {
           <div>
             <div className="flex items-center justify-between mb-4">
               <Badge className="bg-green-100 text-green-800">{product.category}</Badge>
-              <div className="text-right">
-                <p className="text-sm text-gray-600 mb-1">Precio disponible por consulta</p>
-                <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white">
-                  Consultar por WhatsApp
-                </Button>
-              </div>
+              
             </div>
           </div>
           <div>
@@ -40,7 +36,7 @@ export default function ProductDetailModal({ product }: { product: any }) {
               ))}
             </ul>
           </div>
-          <div>
+          {/*<div>
             <h4 className="text-lg font-semibold text-gray-900 mb-3">Especificaciones Técnicas</h4>
             <div className="bg-gray-50 rounded-lg p-4">
               <dl className="space-y-2">
@@ -52,14 +48,13 @@ export default function ProductDetailModal({ product }: { product: any }) {
                 ))}
               </dl>
             </div>
-          </div>
-          <div className="flex space-x-4">
-            <Button className="flex-1 bg-green-600 hover:bg-green-700">
-              Consultar por WhatsApp
-            </Button>
-            <Button variant="outline" className="flex-1 border-green-600 text-green-600 hover:bg-green-50">
-              Más Información
-            </Button>
+          </div> */}
+          <div className="flex space-x-4 items-center justify-center">
+            <Link href='' target='_blank'>
+              <Button className="flex-1 bg-green-600 hover:bg-green-700">
+                Consultar por WhatsApp
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

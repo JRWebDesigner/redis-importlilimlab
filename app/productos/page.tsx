@@ -120,33 +120,6 @@ export default function ProductosPage() {
         "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=800",
         "https://images.pexels.com/photos/8942977/pexels-photo-8942977.jpeg?auto=compress&cs=tinysrgb&w=800"
       ]
-    },
-    {
-      id: 4,
-      name: "Centrífuga de Mesa CM-800",
-      category: "Equipos Eléctricos",
-      description: "Centrífuga de mesa de alta velocidad con rotor de ángulo fijo, ideal para separación de muestras biológicas.",
-      keywords: ["centrífuga", "mesa", "alta velocidad", "rotor", "separación", "biológicas", "muestras"],
-      features: [
-        "Velocidad máxima: 15,000 RPM",
-        "Capacidad: 24 tubos de 1.5/2.0ml",
-        "Control digital de velocidad y tiempo",
-        "Sistema de seguridad con tapa de bloqueo",
-        "Motor sin escobillas de larga duración",
-        "Operación silenciosa < 58dB"
-      ],
-      specifications: {
-        "Velocidad máxima": "15,000 RPM",
-        "Capacidad": "24 tubos",
-        "Fuerza centrífuga": "21,380 x g",
-        "Nivel de ruido": "< 58dB",
-        "Dimensiones": "280x260x180 mm"
-      },
-      images: [
-        "https://images.pexels.com/photos/8942977/pexels-photo-8942977.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/3735780/pexels-photo-3735780.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800"
-      ]
     }
   ];
 
