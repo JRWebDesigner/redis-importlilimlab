@@ -21,9 +21,6 @@ export default function CTASection() {
           <Button size="lg" variant="secondary" className="bg-white text-green-600 hover:bg-gray-100">
             Solicitar Cotización
           </Button>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600">
-            Contactar Especialista
-          </Button>
         </div>
       </div>
     </motion.section>

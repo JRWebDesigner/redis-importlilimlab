@@ -6,9 +6,12 @@ import { Button } from '@/components/ui/button';
 import {
   Microscope,
   FlaskConical,
+  Beaker,
   TestTube,
   Zap,
   Search,
+  Thermometer,
+  ShieldAlert
 } from 'lucide-react';
 
 import Breadcrumb from '@/components/productos/Breadcrumb';
@@ -123,35 +126,35 @@ export default function ProductosPage() {
     }
   ];
 
-  const products = [
+  const categorys = [
     {
-      category: "Microscopios",
-      description: "Microscopios ópticos y electrónicos de alta precisión",
+      title: "Equipos de Análisis",
       icon: Microscope,
-      items: ["Microscopios biológicos", "Microscopios estéreo", "Microscopios digitales", "Accesorios y lentes"]
+      items: ["Microscopios", "Espectrofotómetros", "Balanzas analíticas", "pH metros"]
     },
     {
-      category: "Equipos de Análisis",
-      description: "Instrumentos analíticos de última generación",
+      title: "Material de Vidrio",
       icon: FlaskConical,
-      items: ["Espectrofotómetros", "Cromatógrafos", "Balanzas analíticas", "pH metros"]
+      items: ["Matraces", "Pipetas", "Buretas", "Probetas graduadas"]
     },
     {
-      category: "Material de Vidrio",
-      description: "Cristalería de laboratorio de calidad premium",
-      icon: TestTube,
-      items: ["Matraces y vasos", "Pipetas y buretas", "Tubos de ensayo", "Placas petri"]
+      title: "Instrumentos de Medición",
+      icon: Thermometer,
+      items: ["Termómetros", "Calibradores", "Medidores", "Sensores"]
     },
     {
-      category: "Equipos Eléctricos",
-      description: "Instrumentos eléctricos y electrónicos especializados",
-      icon: Zap,
-      items: ["Centrífugas", "Incubadoras", "Autoclaves", "Agitadores magnéticos"]
+      title: "Reactivos y Químicos",
+      icon: Beaker,
+      items: ["Reactivos analíticos", "Estándares", "Soluciones buffer", "Indicadores"]
+    },
+    {
+      title: "Reactivos de Grado Industrial",
+      icon: ShieldAlert,
+      items: ["Solventes orgánicos", "Sales inorgánicas", "Reactivos para síntesis", "Indicadores químicos"]
     }
   ];
 
-
-  const categories = ['Todas', ...products.map(p => p.category)];
+  const categories = ['Todas', ...categorys.map(p => p.category)];
 
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todas');
@@ -211,48 +214,45 @@ export default function ProductosPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Productos Destacados</h2>
-              <p className="text-lg text-gray-600">Equipos de alta calidad con especificaciones técnicas detalladas</p>
+                {filteredProducts.length > 0 ? (
+                  <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    variants={staggerContainer}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                  >
+                    {filteredProducts.map((product) => (
+                      <ProductCard key={product.id} product={product} />
+                    ))}
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    className="text-center py-12"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Search className="w-12 h-12 text-gray-400" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">No se encontraron productos</h3>
+                    <p className="text-gray-600 mb-6">
+                      Intenta con otros términos de búsqueda o selecciona una categoría diferente.
+                    </p>
+                    <Button
+                      onClick={() => {
+                        setSearchTerm('');
+                        setSelectedCategory('Todas');
+                      }}
+                      variant="outline"
+                      className="border-green-600 text-green-600 hover:bg-green-50"
+                    >
+                      Limpiar filtros
+                    </Button>
+                  </motion.div>
+                )}             
             </motion.div>
-
-            {filteredProducts.length > 0 ? (
-              <motion.div
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                variants={staggerContainer}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-              >
-                {filteredProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-              </motion.div>
-            ) : (
-              <motion.div
-                className="text-center py-12"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Search className="w-12 h-12 text-gray-400" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">No se encontraron productos</h3>
-                <p className="text-gray-600 mb-6">
-                  Intenta con otros términos de búsqueda o selecciona una categoría diferente.
-                </p>
-                <Button
-                  onClick={() => {
-                    setSearchTerm('');
-                    setSelectedCategory('Todas');
-                  }}
-                  variant="outline"
-                  className="border-green-600 text-green-600 hover:bg-green-50"
-                >
-                  Limpiar filtros
-                </Button>
-              </motion.div>
-            )}
           </div>
         </section>
         {/* Product Categories */}
@@ -276,8 +276,8 @@ export default function ProductosPage() {
               whileInView="animate"
               viewport={{ once: true }}
             >
-              {products.map((product, index) => (
-                <ProductCategoryCard key={index} product={product} />
+              {categorys.map((category, index) => (
+                <ProductCategoryCard key={index} product={category} />
               ))}
             </motion.div>
           </div>
