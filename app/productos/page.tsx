@@ -11,11 +11,11 @@ import {
   Search,
 } from 'lucide-react';
 
-import Breadcrumb from './components/Breadcrumb';
-import SearchAndFilterBar from './components/SearchAndFilterBar';
-import ProductCard from './components/ProductCard';
-import ProductCategoryCard from './components/ProductCategoryCard';
-import CTASection from './components/CTASection';
+import Breadcrumb from '@/components/productos/Breadcrumb';
+import SearchAndFilterBar from '@/components/productos/SearchAndFilterBar';
+import ProductCard from '@/components/productos/ProductCard';
+import ProductCategoryCard from '@/components/productos/ProductCategoryCard';
+import CTASection from '@/components/productos/CTASection';
 
 // Animation variants
 const fadeInUp = {
