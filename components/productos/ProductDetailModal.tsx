@@ -36,19 +36,6 @@ export default function ProductDetailModal({ product }: { product: any }) {
               ))}
             </ul>
           </div>
-          {/*<div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-3">Especificaciones Técnicas</h4>
-            <div className="bg-gray-50 rounded-lg p-4">
-              <dl className="space-y-2">
-                {Object.entries(product.specifications).map(([key, value]) => (
-                  <div key={key} className="flex justify-between">
-                    <dt className="font-medium text-gray-700">{key}:</dt>
-                    <dd className="text-gray-600">{value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </div> */}
           <div className="flex space-x-4 items-center justify-center">
             <Link href='' target='_blank'>
               <Button className="flex-1 bg-green-600 hover:bg-green-700">

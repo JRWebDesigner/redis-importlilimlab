@@ -84,13 +84,6 @@ export default function ProductosPage() {
         "Compartimento de muestras termostatizado",
         "Lámpara de deuterio y tungsteno"
       ],
-      specifications: {
-        "Rango espectral": "190-1100 nm",
-        "Resolución": "1.8 nm",
-        "Exactitud": "±0.002 Abs",
-        "Reproducibilidad": "±0.001 Abs",
-        "Dimensiones": "650x450x280 mm"
-      },
       images: [
         "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800",
         "https://images.pexels.com/photos/3735780/pexels-photo-3735780.jpeg?auto=compress&cs=tinysrgb&w=800",
