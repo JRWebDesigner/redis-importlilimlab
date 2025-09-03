@@ -147,7 +147,7 @@ export default function ProductosPage() {
     }
   ];
 
-  const categories = ['Todas', ...categorys.map(p => p.category)];
+  const categories = ['Todas', ...Array.from(new Set(featuredProducts.map(p => p.category)))];
 
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todas');
