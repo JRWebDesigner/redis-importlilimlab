@@ -9,7 +9,7 @@ export default function ProductCard({ product }: { product: any }) {
   return (
     <Card className="hover:shadow-xl transition-shadow duration-300 h-full">
       <CardHeader>
-        <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden mb-4">
+        <div className="h-[250px] bg-gray-100 rounded-lg overflow-hidden mb-4">
           <img
             src={product.images[0]}
             alt={product.name}

@@ -9,7 +9,7 @@ export default function ProductCarousel({ images, productName }: { images: strin
 
   return (
     <div className="relative">
-      <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
+      <div className="bg-gray-100 rounded-lg overflow-hidden">
         <img
           src={images[currentIndex]}
           alt={`${productName} - Imagen ${currentIndex + 1}`}

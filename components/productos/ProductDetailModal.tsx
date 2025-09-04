@@ -8,34 +8,20 @@ import Link from 'next/link'
 export default function ProductDetailModal({ product }: { product: any }) {
   return (
     <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-      <DialogHeader>
-        <DialogTitle className="text-2xl font-bold text-green-800">{product.name}</DialogTitle>
-        <DialogDescription className="text-lg text-gray-600">
-          {product.description}
-        </DialogDescription>
-      </DialogHeader>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6 place-items-center">
         <div>
           <ProductCarousel images={product.images} productName={product.name} />
         </div>
         <div className="space-y-6">
-          <div>
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-green-800">{product.name}</DialogTitle>
             <div className="flex items-center justify-between mb-4">
-              <Badge className="bg-green-100 text-green-800">{product.category}</Badge>
-              
+                  <Badge className="bg-green-100 text-green-800">{product.category}</Badge>      
             </div>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-3">Características Principales</h4>
-            <ul className="space-y-2">
-              {product.features.map((feature: string, index: number) => (
-                <li key={index} className="flex items-start space-x-2">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <DialogDescription className="text-lg text-gray-600">
+              {product.description}
+            </DialogDescription>
+          </DialogHeader>
           <div className="flex space-x-4 items-center justify-center">
             <Link href='' target='_blank'>
               <Button className="flex-1 bg-green-600 hover:bg-green-700">

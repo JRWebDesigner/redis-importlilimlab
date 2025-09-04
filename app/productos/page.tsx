@@ -26,29 +26,12 @@ export default function ProductosPage() {
   const featuredProducts = [
     {
       id: 1,
-      name: "Microscopio Biológico Trinocular BM-180T",
-      category: "Microscopios",
-      description: "Microscopio biológico trinocular profesional con iluminación LED, ideal para laboratorios de investigación y educación superior.",
+      name: "Isoleucina",
+      category: "Materias primas",
+      description: "La isoleucina es un aminoácido esencial, lo que significa que el organismo humano no puede sintetizarlo por sí mismo y, por lo tanto, debe obtenerlo a través de la dieta. Forma parte del grupo de aminoácidos de cadena ramificada (BCAA, por sus siglas en inglés), junto con la leucina y la valina, lo que le permite desempeñar roles únicos en el metabolismo y la síntesis de proteínas. Si te interesa nuestro producto no dude en  Cotizar y nuestra área de venta le responderá a la brevedad posible.",
       keywords: ["microscopio", "biológico", "trinocular", "LED", "investigación", "educación"],
-      features: [
-        "Objetivos acromáticos 4x, 10x, 40x, 100x",
-        "Oculares WF10x/18mm",
-        "Iluminación LED de 3W con control de intensidad",
-        "Condensador Abbe N.A. 1.25 con diafragma iris",
-        "Platina mecánica de 140x130mm",
-        "Enfoque coaxial macro y micrométrico"
-      ],
-      specifications: {
-        "Magnificación": "40x - 1000x",
-        "Sistema óptico": "Infinito corregido",
-        "Tubo": "Trinocular 30°",
-        "Iluminación": "LED 3W",
-        "Peso": "8.5 kg"
-      },
       images: [
-        "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/8942977/pexels-photo-8942977.jpeg?auto=compress&cs=tinysrgb&w=800"
+        "/prod1.webp",
       ]
     },
     {
