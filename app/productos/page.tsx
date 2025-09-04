@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import {fadeInUp , staggerContainer, scaleIn} from '@/animations/variants'
 import { Button } from '@/components/ui/button';
 import {
   Microscope,
@@ -20,26 +21,6 @@ import ProductCard from '@/components/productos/ProductCard';
 import ProductCategoryCard from '@/components/productos/ProductCategoryCard';
 import CTASection from '@/components/productos/CTASection';
 
-// Animation variants
-const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: "easeOut" }
-};
-
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const scaleIn = {
-  initial: { opacity: 0, scale: 0.8 },
-  animate: { opacity: 1, scale: 1 },
-  transition: { duration: 0.5, ease: "easeOut" }
-};
 
 export default function ProductosPage() {
   const featuredProducts = [
