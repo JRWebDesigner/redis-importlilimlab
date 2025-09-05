@@ -29,13 +29,13 @@ export default function ProductosPage() {
   useEffect(
     ()=>{
         async function fechData(){
-            const data = await getProducts()
-            setProducts(data || [])
+          const data = await getProducts();
+          setProducts(Array.isArray(data) ? data : []);
         }
-        
         fechData()
     }
   ,[])
+  
   const categorys = [
     {
       title: "Equipos de Análisis",
@@ -64,23 +64,23 @@ export default function ProductosPage() {
     }
   ];
 
-  const categories = ['Todas', ...Array.from(new Set(products.map(p => p.category)))];
-
+  const categories = ['Todas','Reactivos e Insumos'];
+  // ...Array.from(new Set(products.map(p => p.category)))
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todas');
-
-  // Calcula los productos filtrados directamente:
-  const filteredProducts = products.filter(product => {
+  
+  const filteredProducts = Array.isArray(products)
+  ? products.filter(product => {
     const matchesSearch =
       searchTerm === '' ||
-      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.description.toLowerCase().includes(searchTerm.toLowerCase())
+      product.name.toLowerCase().includes(searchTerm.toLowerCase()) 
+      // || product.description.toLowerCase().includes(searchTerm.toLowerCase())
 
     const matchesCategory =
       selectedCategory === 'Todas' || product.category === selectedCategory;
 
     return matchesSearch && matchesCategory;
-  });
+  }) : [];
 
   return (
     <div className="min-h-screen bg-white">
@@ -123,7 +123,8 @@ export default function ProductosPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-                {filteredProducts.length > 0 ? (
+              {
+                filteredProducts.length > 0 ? (
                   <motion.div
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                     variants={staggerContainer}
@@ -135,7 +136,8 @@ export default function ProductosPage() {
                       <ProductCard key={product.id} product={product} />
                     ))}
                   </motion.div>
-                ) : (
+                
+               ) : (
                   <motion.div
                     className="text-center py-12"
                     initial={{ opacity: 0, scale: 0.9 }}

@@ -4,7 +4,7 @@ export const PRODUCTS_QUERY = `*[_type == "product"]{
   _id,
   name,
   images,
-  "category": category->name,
+  "category": category[0]->title,
   body,
 }`;
 
