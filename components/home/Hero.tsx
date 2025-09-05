@@ -85,10 +85,10 @@ export default function Hero(){
                 }}
                 loop={true}
                 modules={[Autoplay, EffectCards]}
-                className="bg-green-950 rounded-2xl shadow-2xl p-8"
+                className="bg-white rounded-2xl shadow-2xl p-8"
               >
                 {sliders.map((slide, key) => (
-                  <SwiperSlide key={key} className="w-full h-64 object-cover rounded-xl p-4 bg-green-500 bg-opacity-50">
+                  <SwiperSlide key={key} className="w-full h-64 object-cover rounded-xl p-4 bg-white">
                     <img
                       src={slide}
                       alt="Equipos de laboratorio"

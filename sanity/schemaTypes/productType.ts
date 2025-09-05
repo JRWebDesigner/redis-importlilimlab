@@ -8,20 +8,23 @@ export const productType = defineType({
   icon: DocumentTextIcon,
   fields: [
     defineField({
-      name: 'nombre',
+      name: 'name',
+      title: 'Nombre del Producto',
       type: 'string',
     }),
     defineField({
-      name: 'categoria',
+      name: 'category',
+      title: 'Categoria del Producto',
       type: 'array',
       of: [defineArrayMember({type: 'reference', to: {type: 'category'}})],
     }),
     defineField({
       name: 'body',
+      title: 'Descripcion del Producto',
       type: 'blockContent',
     }),
     defineField({
-    name: 'images',
+      name: 'images',
       title: 'Imágenes del Producto',
       type: 'array',
       of: [

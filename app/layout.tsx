@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         {children}
-        <Link href="/" target="_blank" className="fixed right-3 bottom-8 rounded-full bg-green-600 p-4 text-white font-bold hover:scale-110 duration-300">
+        <Link href="/" target="_blank" className="fixed z-50 right-3 bottom-8 rounded-full bg-green-600 p-4 text-white font-bold hover:scale-110 duration-300">
            <MessageSquareText className="w-10 h-10"/>
         </Link>
         <Footer />
