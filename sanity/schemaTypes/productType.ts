@@ -16,7 +16,7 @@ export const productType = defineType({
       name: 'category',
       title: 'Categoria del Producto',
       type: 'reference',
-      of: [defineArrayMember({type: 'reference', to: {type: 'category'}})],
+      to: [{type: 'category'}],
     }),
     defineField({
       name: 'body',
