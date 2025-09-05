@@ -24,7 +24,7 @@ import {getProducts} from '@/lib/getQueries'
 
 export default function ProductosPage() {
   
-  const [products, setProducts]=useState<any[]>([])
+  const [products, setProducts]=useState([])
   
   useEffect(
     ()=>{
