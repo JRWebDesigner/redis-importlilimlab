@@ -25,8 +25,6 @@ import {getProducts} from '@/lib/getQueries'
 export default function ProductosPage() {
   
   const [products, setProducts]=useState<any[]>([])
-  const featuredProducts = [
-  ];
   
   useEffect(
     ()=>{
@@ -38,7 +36,6 @@ export default function ProductosPage() {
         fechData()
     }
   ,[])
-   console.log(products)
   const categorys = [
     {
       title: "Equipos de Análisis",
@@ -67,13 +64,13 @@ export default function ProductosPage() {
     }
   ];
 
-  const categories = ['Todas', ...Array.from(new Set(featuredProducts.map(p => p.category)))];
+  const categories = ['Todas', ...Array.from(new Set(products.map(p => p.category)))];
 
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todas');
 
   // Calcula los productos filtrados directamente:
-  const filteredProducts = featuredProducts.filter(product => {
+  const filteredProducts = products.filter(product => {
     const matchesSearch =
       searchTerm === '' ||
       product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
