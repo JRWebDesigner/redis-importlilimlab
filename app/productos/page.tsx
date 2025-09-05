@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {fadeInUp , staggerContainer, scaleIn} from '@/animations/variants'
 import { Button } from '@/components/ui/button';
@@ -20,69 +20,25 @@ import SearchAndFilterBar from '@/components/productos/SearchAndFilterBar';
 import ProductCard from '@/components/productos/ProductCard';
 import ProductCategoryCard from '@/components/productos/ProductCategoryCard';
 import CTASection from '@/components/productos/CTASection';
-
+import {getProducts} from '@/lib/getQueries'
 
 export default function ProductosPage() {
+  
+  const [products, setProducts]=useState<any[]>([])
   const featuredProducts = [
-    {
-      id: 1,
-      name: "Isoleucina",
-      category: "Materias primas",
-      description: "La isoleucina es un aminoácido esencial, lo que significa que el organismo humano no puede sintetizarlo por sí mismo y, por lo tanto, debe obtenerlo a través de la dieta. Forma parte del grupo de aminoácidos de cadena ramificada (BCAA, por sus siglas en inglés), junto con la leucina y la valina, lo que le permite desempeñar roles únicos en el metabolismo y la síntesis de proteínas. Si te interesa nuestro producto no dude en  Cotizar y nuestra área de venta le responderá a la brevedad posible.",
-      keywords: ["microscopio", "biológico", "trinocular", "LED", "investigación", "educación"],
-      images: [
-        "/prod1.webp",
-      ]
-    },
-    {
-      id: 2,
-      name: "Espectrofotómetro UV-Vis SP-2000",
-      category: "Equipos de Análisis",
-      description: "Espectrofotómetro UV-Visible de doble haz con software avanzado para análisis cuantitativo y cualitativo de alta precisión.",
-      keywords: ["espectrofotómetro", "UV", "visible", "análisis", "cuantitativo", "cualitativo", "precisión"],
-      features: [
-        "Rango espectral: 190-1100 nm",
-        "Ancho de banda espectral: 1.8 nm",
-        "Exactitud fotométrica: ±0.002 Abs",
-        "Software PC con base de datos integrada",
-        "Compartimento de muestras termostatizado",
-        "Lámpara de deuterio y tungsteno"
-      ],
-      images: [
-        "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/3735780/pexels-photo-3735780.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/8942978/pexels-photo-8942978.jpeg?auto=compress&cs=tinysrgb&w=800"
-      ]
-    },
-    {
-      id: 3,
-      name: "Balanza Analítica Digital BA-220",
-      category: "Equipos de Análisis",
-      description: "Balanza analítica de precisión con pantalla LCD y calibración automática, ideal para mediciones exactas en laboratorio.",
-      keywords: ["balanza", "analítica", "digital", "precisión", "LCD", "calibración", "medición"],
-      features: [
-        "Capacidad: 220g con precisión de 0.1mg",
-        "Pantalla LCD retroiluminada",
-        "Calibración automática interna",
-        "Cámara de pesaje con puertas corredizas",
-        "Interfaz RS-232 para conexión a PC",
-        "Funciones estadísticas integradas"
-      ],
-      specifications: {
-        "Capacidad máxima": "220g",
-        "Precisión": "0.1mg",
-        "Repetibilidad": "±0.1mg",
-        "Tiempo de estabilización": "3 segundos",
-        "Dimensiones": "350x215x320 mm"
-      },
-      images: [
-        "https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "https://images.pexels.com/photos/8942977/pexels-photo-8942977.jpeg?auto=compress&cs=tinysrgb&w=800"
-      ]
-    }
   ];
-
+  
+  useEffect(
+    ()=>{
+        async function fechData(){
+            const data = await getProducts()
+            setProducts(data || [])
+        }
+        
+        fechData()
+    }
+  ,[])
+   console.log(products)
   const categorys = [
     {
       title: "Equipos de Análisis",
@@ -121,8 +77,7 @@ export default function ProductosPage() {
     const matchesSearch =
       searchTerm === '' ||
       product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm.toLowerCase()));
+      product.description.toLowerCase().includes(searchTerm.toLowerCase())
 
     const matchesCategory =
       selectedCategory === 'Todas' || product.category === selectedCategory;

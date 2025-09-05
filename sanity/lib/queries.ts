@@ -1,13 +1,10 @@
 import {defineQuery} from 'next-sanity'
 
-export const PRODUCTS_QUERY = `*[_type == "mueblesType"] {
+export const PRODUCTS_QUERY = `*[_type == "product"]{
   _id,
   name,
   images,
-  category->{
-    _id,
-    name,
-    slug
-  },
-  description,
+  "category": category->name,
+  body,
 }`;
+

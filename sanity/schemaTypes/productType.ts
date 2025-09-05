@@ -15,7 +15,7 @@ export const productType = defineType({
     defineField({
       name: 'category',
       title: 'Categoria del Producto',
-      type: 'array',
+      type: 'reference',
       of: [defineArrayMember({type: 'reference', to: {type: 'category'}})],
     }),
     defineField({
@@ -53,7 +53,7 @@ export const productType = defineType({
   ],
   preview: {
     select: {
-      title: 'nombre',
+      title: 'name',
       media: 'images.0',
     },
   },
