@@ -1,3 +1,4 @@
+import { PortableText } from "next-sanity";
 import { DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -6,6 +7,7 @@ import ProductCarousel from './ProductCarousel';
 import Link from 'next/link'
 
 export default function ProductDetailModal({ product }: { product: any }) {
+  
   return (
     <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6 place-items-center">
@@ -19,7 +21,7 @@ export default function ProductDetailModal({ product }: { product: any }) {
                   <Badge className="bg-green-100 text-green-800">{product.category}</Badge>      
             </div>
             <DialogDescription className="text-lg text-gray-600">
-              {product.description}
+              <PortableText value={product.body || []} />
             </DialogDescription>
           </DialogHeader>
           <div className="flex space-x-4 items-center justify-center">
