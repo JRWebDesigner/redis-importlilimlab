@@ -1,6 +1,7 @@
+"use client"
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-
+import Link from 'next/link'
 export default function CTASection() {
   return (
     <motion.section 
@@ -18,9 +19,11 @@ export default function CTASection() {
           Contamos con una amplia red de fabricantes mundiales. Contáctanos para productos específicos.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" variant="secondary" className="bg-white text-green-600 hover:bg-gray-100">
-            Solicitar Cotización
-          </Button>
+          <Link href="https://wa.link/ryfuv1" target='_blank'>
+            <Button size="lg" variant="secondary" className="bg-white text-green-600 hover:bg-gray-100">
+                Solicitar Cotización
+            </Button>
+          </Link>
         </div>
       </div>
     </motion.section>

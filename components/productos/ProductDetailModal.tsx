@@ -7,7 +7,7 @@ import ProductCarousel from './ProductCarousel';
 import Link from 'next/link'
 
 export default function ProductDetailModal({ product }: { product: any }) {
-  
+  const message=""
   return (
     <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6 place-items-center">
@@ -25,7 +25,7 @@ export default function ProductDetailModal({ product }: { product: any }) {
             </DialogDescription>
           </DialogHeader>
           <div className="flex space-x-4 items-center justify-center">
-            <Link href='' target='_blank'>
+            <Link href={`https://wa.me/+59176293693?text=Muy buen dia, me gustaria tener mas informacion sobre: ${product.name}`} target='_blank'>
               <Button className="flex-1 bg-green-600 hover:bg-green-700">
                 Consultar por WhatsApp
               </Button>
