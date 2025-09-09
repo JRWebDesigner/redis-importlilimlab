@@ -38,13 +38,7 @@ export const productType = defineType({
               name: 'alt',
               title: 'Texto Alternativo',
               type: 'string',
-              validation: Rule => Rule.required()
             },
-            {
-              name: 'caption',
-              title: 'Descripción de la Imagen',
-              type: 'string'
-            }
           ]
         }
       ],
