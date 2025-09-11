@@ -35,7 +35,6 @@ export default function ProductosPage() {
     }
     fechData();
   }, []);
-  console.log('products: ', products)
   const categorys = [
     {
       title: "Equipos de Análisis",
@@ -64,7 +63,7 @@ export default function ProductosPage() {
     }
   ];
 
-  const categories = ['Todas', 'Reactivos e Insumos'];
+  const categories = ['Todas', 'Reactivos e Insumos', 'Material de Vidrio', 'Equipos de Análisis', 'Reactivos de Grado Industrial', ''];
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todas');
 
@@ -139,7 +138,7 @@ export default function ProductosPage() {
                 </motion.div>
               ) : filteredProducts.length > 0 ? (
                 <motion.div
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
                   variants={staggerContainer}
                   initial="initial"
                   whileInView="animate"

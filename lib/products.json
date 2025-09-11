@@ -1,18 +1,8 @@
 [
   {
-    "name": "Agitador Magnetico con Placa Calefactora Acero Inox con Recubrimiento Ceramico",
-    "category": "c9985e56-24e5-4fa4-8261-74e8458370b8",
-    "body": "Construcción de aluminio moldeado\n\nPlaca superior de acero inoxidable recubierta de ceramica, resistente a los productos quimicos y a los arañazos.\nDistribución uniforme del calor.\n Placa superior grande para vasos de precipitados de hasta 2000 ml.\n Operación de perilla inteligente multivuelta.\n Alta fuerza magnetica. \n Configuración digital con pantallas independientes. \nelección de grados Celsius y Fahrenheit.\nSelección de placa calefactora o control de temperatura por sonda.\nCorte de seguridad configurable para el límite maximo de temperatura para la placa superior o la sonda.\nInstalado con sensores PT dobles para seguridad y mecanismo de operacion a prueba de fallas.\nSolo con bateria.\nSonda de sensores de temperatura PT 100 incluida.\nConfiguración digital de RPM con pantalla independiente.\nConfiguración digital del tiempo con visualización independiente.\nIndicación de conteo ascendente de minutos y horas.\nAlarma audible al final del ciclo de tiempo para mayor seguridad y facilidad de operación sin supervisión.",
-    "images": [
-      {
-        "imageFile": "prod2.jpg"
-      }
-    ]
-  },
-  {
-    "name": "Balanza de Precision 10 kg Legibilidad 0.1 g",
-    "category": "c9985e56-24e5-4fa4-8261-74e8458370b8",
-    "body": "Las balanzas son dedicadas al pesaje muy rapido y exacto en el ambiente de laboratorio e industrial. Pueden funcionar en lugares alejados de una fuente de alimentación electrica ya que son equipadas de un acumulador interno (230V) y un interfaz RS 232 com estandar. Tiene el platillo de acero inoxidable y pantalla LCD retroiluminada que garantiza la mayor legibilidad del resultado de pesaje.",
+    "name": "Tubo de Ensayo de Vidrio Borosilicato 3.3 con Tapa Rosca",
+    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
+    "body": "El vidrio borosilicato 3.3 es un vidrio con un contenido mínimo en sílice del 80% y muy bajo coeficiente de expansión (3,3•10-6 K-1), que pertenece al grupo de los borosilicatos tipo “3.3” tal como se definen en la norma ISO 3585.\n\nSe emplea en productos donde deba combinarse resistencia química, resistencia mecánica y resistencia a los cambios bruscos de temperatura.\n\nPor esa combinación única de propiedades es el tipo de vidrio de referencia con el que se fabrican la mayoría de productos para laboratorio.",
     "images": [
       {
         "imageFile": "prod1.jpg"
@@ -20,9 +10,19 @@
     ]
   },
   {
-    "name": "Colorimetro Checker HC para Fluoruro Intervalo Bajo",
-    "category": "c9985e56-24e5-4fa4-8261-74e8458370b8",
-    "body": "El flúor es una de las pocas sustancias químicas que se ha demostrado que causan efectos significativos en las personas a través del agua potable. El fluoruro tiene efectos beneficiosos sobre los dientes a bajas concentraciones en el agua potable, pero la exposición excesiva al fluoruro en el agua potable o en combinación con la exposición al fluoruro de otras fuentes puede dar lugar a una serie de efectos adversos.\n\nLa fluoración del agua es la adición controlada de fluoruro a un suministro público de agua para reducir la caries dental. El agua fluorada actúa sobre las superficies de los dientes: en la boca, crea bajos niveles de fluoruro en la saliva, lo que reduce la velocidad a la que el esmalte dental se desmineraliza e incrementa la velocidad a la que se remineraliza en las primeras etapas de las cavidades. El comité de expertos de la Organización Mundial de la Salud de 1994 sugirió un nivel de fluoruro de 0.5 a 1.0 mg/L, dependiendo del clima. El agua embotellada por lo general tiene niveles desconocidos de fluoruro, y algunos filtros de agua doméstica eliminan parte o todos los fluoruros.",
+    "name": "Tubo de Ensayo de Vidrio Borosilicato 5.1 con Tapa Rosca",
+    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
+    "body": "Fabricado con vidrio de borosilicato, cada tubo se trata térmicamente a una temperatura superior a 500 °C (932 °F) inmediatamente antes del empaque, lo que elimina la contaminación, aumenta la resistencia y reduce las roturas.\n\nLos tubos presentan fondos bien redondeados y cuello pulido al fuego sin bordes ásperos.\n\nLas especificaciones dimensionales de estos tubos están rígidamente controlados para obtener resultados confiables y uniformes. Los tubos están limpios y sellados en un empaque de dispensación conveniente para mantenerlos libres de polvo y otras partículas contaminantes.\n\nLa construcción de vidrio de borosilicato evita el cambio de pH en las pruebas de laboratorio.",
+    "images": [
+      {
+        "imageFile": "prod2.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Tubo de Ensayo de Vidrio Borosilicato 5.1",
+    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
+    "body": "Fabricado con vidrio de borosilicato, cada tubo se trata térmicamente a una temperatura superior a 500 °C (932 °F) inmediatamente antes del empaque, lo que elimina la contaminación, aumenta la resistencia y reduce las roturas.\n\nLos tubos presentan fondos bien redondeados y cuello pulido al fuego sin bordes ásperos.\n\nLas especificaciones dimensionales de estos tubos están rígidamente controlados para obtener resultados confiables y uniformes. Los tubos están limpios y sellados en un empaque de dispensación conveniente para mantenerlos libres de polvo y otras partículas contaminantes.\n\nLa construcción de vidrio de borosilicato evita el cambio de pH en las pruebas de laboratorio.",
     "images": [
       {
         "imageFile": "prod3.jpg"
@@ -30,9 +30,9 @@
     ]
   },
   {
-    "name": "Fotometro para Cloro Libre y Total Intervalo Alto",
-    "category": "c9985e56-24e5-4fa4-8261-74e8458370b8",
-    "body": "Deje que su fotómetro lo guíe a través de la configuración, la calibración y las pruebas de tutoriales y animaciones en pantalla para que siempre sepa cuál es el siguiente paso. Simplemente ingrese al modo tutorial en cualquier etapa del proceso de configuración o medición con la tecla de ayuda.\n\nLa función de apagado automático prolonga la vida útil de la batería para mayor tranquilidad y ahorro de energía si el medidor se deja encendido accidentalmente.\n\nCuando el nivel de la batería es inferior al 10%, un símbolo de advertencia parpadeará para indicar el estado de la batería baja. Cuando la energía de la batería es baja puede afectar sus resultados, entonces el medidor se apagará para evitar lecturas erróneas.",
+    "name": "Tubo de Ensayo Durham de Vidrio Borosilicato 5.1",
+    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
+    "body": "Fabricado con vidrio de borosilicato, cada tubo se trata térmicamente a una temperatura superior a 500 °C (932 °F) inmediatamente antes del empaque, lo que elimina la contaminación, aumenta la resistencia y reduce las roturas.\n\nLos tubos presentan fondos bien redondeados y cuello pulido al fuego sin bordes ásperos.\n\nLas especificaciones dimensionales de estos tubos están rígidamente controlados para obtener resultados confiables y uniformes. Los tubos están limpios y sellados en un empaque de dispensación conveniente para mantenerlos libres de polvo y otras partículas contaminantes.\n\nLa construcción de vidrio de borosilicato evita el cambio de pH en las pruebas de laboratorio.",
     "images": [
       {
         "imageFile": "prod4.jpg"
@@ -40,9 +40,9 @@
     ]
   },
   {
-    "name": "Medidor de Bolsillo de pH/ Temp resol 0.01",
-    "category": "c9985e56-24e5-4fa4-8261-74e8458370b8",
-    "body": "Tiene muchas características avanzadas que se encuentran en instrumentos más caros. La calibración de uno o dos puntos es automática usando dos conjuntos de soluciones seleccionables (4.01, 7.01 y 10.01 o 4.01, 6.86 y 9.18).\n\nTambién cuenta con un electrodo reemplazable que tiene un conector redondo de acero inoxidable. Este diseño del cartucho no tiene pines para alinear o que puedan romperse.\n\nEl electrodo de pH de repuesto Electrodo de pH de Repuesto para Medidores de Bolsillo también cuenta con una unión de tela extraíble, la cual permite su renovación. Extraiga simplemente ⅛” de la unión tirando de la tela para exponer una nueva porción. Cualquier incrustación que estuviera presente se eliminará y el tiempo de respuesta volverá a lo normal, extendiendo la vida útil del electrodo de pH.",
+    "name": "Balon Fondo Plano Cuello Ancho",
+    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
+    "body": "Balon fondo plano cuello ancho.\n\n-Fabricado en vidrio borosilicato 3.3 de calidad superior.\n\n-Resistente al calor.\n\n-Conforme a ASTM E-438.\n\n-Conforme a DIN / ISO 24450.",
     "images": [
       {
         "imageFile": "prod5.jpg"
@@ -50,9 +50,9 @@
     ]
   },
   {
-    "name": "Medidor de mesa de pH / mV resol 0.001 pH",
-    "category": "c9985e56-24e5-4fa4-8261-74e8458370b8",
-    "body": "Medidor de mesa de pH / mV resol 0.001 pH  es un medidor avanzado de pH / mV d grado investigación que es completamente personalizable, con una gran pantalla LCD a color, teclas sensibles al tacto y puerto USB para conectividad a computadoras.\n\nCuenta con una conexión BNC universal para su uso con la amplia línea de electrodos de pH y ORP que ofrece Hanna Instruments. El medidor se suministra con el electrodo de pH combinado de doble unión, HI1131B, que funciona en un amplio intervalo de temperaturas de 0 a 100°C. Todas las lecturas se compensan automáticamente por variaciones de temperatura con la sonda de HI7662-T que está incluida.\n\nEl Medidor de mesa de pH / mV resol 0.001 pH se puede calibrar hasta a cinco puntos con una opción de ocho soluciones de calibración programadas o cinco personalizadas.\n\nCuenta con la tecnología exclusiva CAL Check™ de Hanna para alertar al usuario de posibles problemas durante el proceso de calibración de pH, tales como “electrodo está sucio/roto”y “la solución de calibración está contaminada”.",
+    "name": "Balon Fondo Plano",
+    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
+    "body": "Fabricado en vidrio borosilicato 3.3 resistente al calor, ASTM E-438 Tipo 1.\n\nCon reborde\n\nConforme a  la norma DIN / ISO 1773.",
     "images": [
       {
         "imageFile": "prod6.jpg"
@@ -60,9 +60,9 @@
     ]
   },
   {
-    "name": "Medidor Multiparametrico de pH / ORP / TDS / Salinidad/ OD/ Presion / Temperatura",
-    "category": "c9985e56-24e5-4fa4-8261-74e8458370b8",
-    "body": "Pantalla LCD gráfica iluminada: El Medidor Multiparametrico de pH / ORP / TDS / Salinidad/ OD/ Presion / Temperaturacuenta con una pantalla LCD iluminada con ayuda en pantalla y la capacidad de mostrar hasta doce parámetros simultáneamente. La pantalla gráfica permite el uso de botones virtuales para proporcionar una interfaz de usuario intuitiva.\n\nProtección a prueba de agua: El equipo multiparamétrico está protegido por una carcasa impermeable IP67 y puede soportar la inmersión en agua a una profundidad de 1 m durante un máximo de 30 minutos. La sonda cuenta con una clasificación IP68 para inmersión continua en agua.\n\nSonda digital de rápida conexión: La sonda cuenta con un conector DIN de rápida conexión que se une de manera impermeable con el medidor.",
+    "name": "Balon Fondo Redondo",
+    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
+    "body": "Fabricado conforme a ASTM E-438 Tipo 1,  Vidrio Borosilicato 3.3\n\nConforme a DIN / ISO 1773",
     "images": [
       {
         "imageFile": "prod7.jpg"
@@ -70,9 +70,9 @@
     ]
   },
   {
-    "name": "Microscopio Binocular",
-    "category": "c9985e56-24e5-4fa4-8261-74e8458370b8",
-    "body": "Los microscopios modelo bScope han sido diseñados para su uso intensivo en el campo de la investigación en escuelas secundarias, universidades, pequeños laboratorios y aplicaciones veterinarias.\n\nAdemás de un excelente diseño ergonómico, estos microscopios robustos y de precio competitivo están disponibles en varias configuraciones con oculares HWF10x/20 mm y objetivos para campo claro y contraste de fase\n\nUn diseño ergonómico y flexible, con sistemas como los oculares con doble altura de observación, los mandos de enfoque y controles de platina en posición baja, sistema de iluminación LED, permite minimizar la fatiga durante largas sesiones de trabajo y así proporcionar una mayor comodidad para los microscopistas. El tamaño compacto del bScope y el sistema de almacenamiento del cable de alimentación, permite más espacio de trabajo, una transporte más seguro y un fácil almacenamiento",
+    "name": "Capsula de Evaporacion de Vidrio Fondo Plano",
+    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
+    "body": "Capsula de evaporación con pico.\n\nFabricada en vidrio borosilicato 3.3, dando como resultado un producto de alta calidad.\n\nPosee alta resistencia al ataque químico y al choque térmico.",
     "images": [
       {
         "imageFile": "prod8.jpg"
@@ -80,12 +80,42 @@
     ]
   },
   {
-    "name": "Termometro Digital 4 Digitos de -200 °C a 1372 °C PeakTech 5135",
-    "category": "c9985e56-24e5-4fa4-8261-74e8458370b8",
-    "body": "Termometro digital 4 digitos de -200 °C a 1372 °C PeakTech 5135\n\nTermometro digital innovador para sondas de termopar tipo K, con resolucion de 0.1 °C, con doble pantalla retroiluminada de 4 digitos (escala completa 9999), con indicación de funcion.\n\nTiene una respuesta rapida, precision de laboratorio y se puede usar facilmente con una sola mano.\n\nApto para una amplia gama de aplicaciones que incluyen aire acondicionado, preparacion y conservacion de alimentos, industria quimica y laboratorios.",
+    "name": "Cristalizador de Vidrio con Pico",
+    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
+    "body": "Fabricado de vidrio borosilicato 3.3.\n\nCumple con la norma DIN 12338.",
     "images": [
       {
         "imageFile": "prod9.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Embudo Buchner de Vidrio con Disco de Vidrio Sinterizado",
+    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
+    "body": "El embudo buchner de vidrio con disco de vidrio sinterizado, al estar fabricados con vidrio borosilicato 3.3 son resistentes a la mayoria de los reactivos corrosivos, insensibles al amoniaco, acido sulfurico y otros solventes que dañan el papel filtro. El material de vidrio sinterizado esta disponible en seis clases de porosidad de 0 a 5",
+    "images": [
+      {
+        "imageFile": "prod10.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Embudo de Separacion en forma de Pera",
+    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
+    "body": "Embudo de separacion en forma de pera, embudo de decantacion o pera de decantacion que es empleado en la separacion de dos liquidos inmiscibles.\n\n-Fabricado en vidrio bosrosilicato 3.3 de alta calidad y resistencia quimica\n\n-Con tapa de PE y LLave de PTFE\n\n-Cumple la norma ISO 4800.",
+    "images": [
+      {
+        "imageFile": "prod11.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Embudo de Vidrio para Solidos",
+    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
+    "body": "Embudo de vidrio para solidos o embudo de vidrio para polvo\n\n-Fabricado en vidrio borosilicato 3.3.\n\n-Cumple con ASTM E 438.\n\n-Conforme a ASTM E-1095\n\n-con borde y vastago pulidos al fuego.",
+    "images": [
+      {
+        "imageFile": "prod12.jpg"
       }
     ]
   }
