@@ -1,121 +1,212 @@
 [
   {
-    "name": "Tubo de Ensayo de Vidrio Borosilicato 3.3 con Tapa Rosca",
-    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
-    "body": "El vidrio borosilicato 3.3 es un vidrio con un contenido mínimo en sílice del 80% y muy bajo coeficiente de expansión (3,3•10-6 K-1), que pertenece al grupo de los borosilicatos tipo “3.3” tal como se definen en la norma ISO 3585.\n\nSe emplea en productos donde deba combinarse resistencia química, resistencia mecánica y resistencia a los cambios bruscos de temperatura.\n\nPor esa combinación única de propiedades es el tipo de vidrio de referencia con el que se fabrican la mayoría de productos para laboratorio.",
+    "name": "Solvente para Lavado en Seco",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "El solvente para lavado en seco es una sustancia utilizada en el proceso de limpieza de prendas y textiles que no pueden ser limpiados con agua, o en situaciones donde se desea evitar la contracción, decoloración o daño de las fibras.\n\nEste método de limpieza es común en la industria textil, especialmente en el cuidado de prendas delicadas como trajes, vestidos de seda, y otras telas sensibles al agua.",
     "images": [
       {
-        "imageFile": "prod1.jpg"
+        "imageFile": "prod1.webp"
       }
     ]
   },
   {
-    "name": "Tubo de Ensayo de Vidrio Borosilicato 5.1 con Tapa Rosca",
-    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
-    "body": "Fabricado con vidrio de borosilicato, cada tubo se trata térmicamente a una temperatura superior a 500 °C (932 °F) inmediatamente antes del empaque, lo que elimina la contaminación, aumenta la resistencia y reduce las roturas.\n\nLos tubos presentan fondos bien redondeados y cuello pulido al fuego sin bordes ásperos.\n\nLas especificaciones dimensionales de estos tubos están rígidamente controlados para obtener resultados confiables y uniformes. Los tubos están limpios y sellados en un empaque de dispensación conveniente para mantenerlos libres de polvo y otras partículas contaminantes.\n\nLa construcción de vidrio de borosilicato evita el cambio de pH en las pruebas de laboratorio.",
+    "name": "Solvente para Grafitis",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "Un solvente para grafitis es una solución química diseñada específicamente para la eliminación de grafitis y otros tipos de pinturas o tintas adheridas a diferentes superficies.\n\nEstos grafitis, que son comúnmente realizados con aerosoles, marcadores permanentes, pinturas y tintas resistentes, presentan un reto considerable para su eliminación debido a su fuerte adhesión y durabilidad.",
     "images": [
       {
-        "imageFile": "prod2.jpg"
+        "imageFile": "prod2.webp"
+      }
+    ]
+  },
+  
+  {
+    "name": "Solvente de Pintura",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "El solvente de pintura es un compuesto químico esencial en la industria de la pintura y recubrimientos. Su principal función es diluir la pintura y modificar su consistencia para facilitar su aplicación.\n\nEl solvente de pintura es una mezcla líquida utilizada para disolver y diluir pinturas, barnices, y otros recubrimientos, permitiendo que estos productos se apliquen de manera uniforme y se adhieran correctamente a la superficie deseada.",
+    "images": [
+      {
+        "imageFile": "prod3.webp"
       }
     ]
   },
   {
-    "name": "Tubo de Ensayo de Vidrio Borosilicato 5.1",
-    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
-    "body": "Fabricado con vidrio de borosilicato, cada tubo se trata térmicamente a una temperatura superior a 500 °C (932 °F) inmediatamente antes del empaque, lo que elimina la contaminación, aumenta la resistencia y reduce las roturas.\n\nLos tubos presentan fondos bien redondeados y cuello pulido al fuego sin bordes ásperos.\n\nLas especificaciones dimensionales de estos tubos están rígidamente controlados para obtener resultados confiables y uniformes. Los tubos están limpios y sellados en un empaque de dispensación conveniente para mantenerlos libres de polvo y otras partículas contaminantes.\n\nLa construcción de vidrio de borosilicato evita el cambio de pH en las pruebas de laboratorio.",
+    "name": "Sodium Cocoyl Isethionate",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "Sodium Cocoyl Isethionate (SCI) es un tensioactivo suave derivado del aceite de coco. Es una sal de sodio del ácido isetiónico esterificado con ácidos grasos del coco, lo que le confiere sus propiedades surfactantes.\n\nLos tensioactivos, como el SCI, son moléculas que reducen la tensión superficial entre diferentes sustancias, como el agua y el aceite, facilitando así la mezcla y la limpieza.",
     "images": [
       {
-        "imageFile": "prod3.jpg"
+        "imageFile": "prod4.webp"
       }
     ]
   },
   {
-    "name": "Tubo de Ensayo Durham de Vidrio Borosilicato 5.1",
-    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
-    "body": "Fabricado con vidrio de borosilicato, cada tubo se trata térmicamente a una temperatura superior a 500 °C (932 °F) inmediatamente antes del empaque, lo que elimina la contaminación, aumenta la resistencia y reduce las roturas.\n\nLos tubos presentan fondos bien redondeados y cuello pulido al fuego sin bordes ásperos.\n\nLas especificaciones dimensionales de estos tubos están rígidamente controlados para obtener resultados confiables y uniformes. Los tubos están limpios y sellados en un empaque de dispensación conveniente para mantenerlos libres de polvo y otras partículas contaminantes.\n\nLa construcción de vidrio de borosilicato evita el cambio de pH en las pruebas de laboratorio.",
+    "name": "Sulfuro de Sodio",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "El sulfuro de sodio (Na₂S) es un compuesto químico inorgánico que se presenta en forma de un sólido cristalino o polvo.\n\nEs conocido por sus diversas aplicaciones en la industria y sus propiedades químicas específicas",
     "images": [
       {
-        "imageFile": "prod4.jpg"
+        "imageFile": "prod5.webp"
       }
     ]
   },
   {
-    "name": "Balon Fondo Plano Cuello Ancho",
-    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
-    "body": "Balon fondo plano cuello ancho.\n\n-Fabricado en vidrio borosilicato 3.3 de calidad superior.\n\n-Resistente al calor.\n\n-Conforme a ASTM E-438.\n\n-Conforme a DIN / ISO 24450.",
+    "name": "Salitre Potásico",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "El salitre potásico, conocido también como nitrato de potasio o salitre, es un compuesto químico con la fórmula KNO₃.\n\nSe presenta comúnmente en forma de cristales incoloros o blanco, solubles en agua. Se encuentra en la naturaleza en depósitos minerales y se puede sintetizar industrialmente.",
     "images": [
       {
-        "imageFile": "prod5.jpg"
+        "imageFile": "prod6.webp"
       }
     ]
   },
   {
-    "name": "Balon Fondo Plano",
-    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
-    "body": "Fabricado en vidrio borosilicato 3.3 resistente al calor, ASTM E-438 Tipo 1.\n\nCon reborde\n\nConforme a  la norma DIN / ISO 1773.",
+    "name": "Sal Sódica de LAS Liquida",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "La Sal Sódica de LAS Líquida es un componente ampliamente utilizado en la industria de detergentes y productos de limpieza. Se trata de una sal sódica derivada de los alquilbencenosulfonatos lineales (LAS).\n\nEste surfactante es conocido por su capacidad para reducir la tensión superficial entre líquidos y sólidos, facilitando así la emulsificación, dispersión de grasas, aceites y partículas de suciedad en agua, permitiendo que se mezclen mejor.",
     "images": [
       {
-        "imageFile": "prod6.jpg"
+        "imageFile": "prod7.webp"
       }
     ]
   },
   {
-    "name": "Balon Fondo Redondo",
-    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
-    "body": "Fabricado conforme a ASTM E-438 Tipo 1,  Vidrio Borosilicato 3.3\n\nConforme a DIN / ISO 1773",
+    "name": "Sacarosa",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "La sacarosa es un disacárido, un tipo de carbohidrato compuesto por dos monosacáridos: la glucosa y la fructosa. Estos dos azúcares están unidos por un enlace glucosídico, específicamente un enlace α,β-1,2-glucosídico.\n\nEs comúnmente conocida como azúcar de mesa y es el edulcorante más utilizado en la industria alimentaria y en los hogares de todo el mundo.",
     "images": [
       {
-        "imageFile": "prod7.jpg"
+        "imageFile": "prod8.webp"
       }
     ]
   },
   {
-    "name": "Capsula de Evaporacion de Vidrio Fondo Plano",
-    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
-    "body": "Capsula de evaporación con pico.\n\nFabricada en vidrio borosilicato 3.3, dando como resultado un producto de alta calidad.\n\nPosee alta resistencia al ataque químico y al choque térmico.",
+    "name": "Sacarina Sódica USP",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "La Sacarina Sódica USP es la forma sódica de la sacarina, un edulcorante artificial no calórico ampliamente utilizado en diversas industrias, especialmente en la alimentaria y farmacéutica.\n\nSe presenta como una sal sódica debido a que la sacarina en su forma pura es poco soluble en agua, y la conversión a su forma sódica mejora esta solubilidad.",
     "images": [
       {
-        "imageFile": "prod8.jpg"
+        "imageFile": "prod8.webp"
       }
     ]
   },
   {
-    "name": "Cristalizador de Vidrio con Pico",
-    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
-    "body": "Fabricado de vidrio borosilicato 3.3.\n\nCumple con la norma DIN 12338.",
+    "name": "Resina de Colofonia",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "La resina de colofonia, también conocida como resina de pino o simplemente colofonia, es una sustancia resinosa natural derivada principalmente del exudado de árboles coníferos, en especial de los pinos.\n\nSe obtiene a través de un proceso de destilación de la trementina, la cual es una mezcla de resina y aceites volátiles que se extrae directamente del árbol mediante incisiones en su corteza.",
     "images": [
       {
-        "imageFile": "prod9.jpg"
+        "imageFile": "prod8.webp"
       }
     ]
   },
   {
-    "name": "Embudo Buchner de Vidrio con Disco de Vidrio Sinterizado",
-    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
-    "body": "El embudo buchner de vidrio con disco de vidrio sinterizado, al estar fabricados con vidrio borosilicato 3.3 son resistentes a la mayoria de los reactivos corrosivos, insensibles al amoniaco, acido sulfurico y otros solventes que dañan el papel filtro. El material de vidrio sinterizado esta disponible en seis clases de porosidad de 0 a 5",
+    "name": "Ferrocianuro de Potasio",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "El ferrocianuro de potasio es un compuesto químico inorgánico con la fórmula molecular K₄[Fe(CN)₆].\n\nEs conocido por ser un compuesto de coordinación, lo que significa que incluye un átomo central de metal, en este caso, hierro, que está rodeado por un conjunto de ligandos, los cuales son moléculas o iones que donan electrones al metal central.",
     "images": [
       {
-        "imageFile": "prod10.jpg"
+        "imageFile": "prod8.webp"
       }
     ]
   },
   {
-    "name": "Embudo de Separacion en forma de Pera",
-    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
-    "body": "Embudo de separacion en forma de pera, embudo de decantacion o pera de decantacion que es empleado en la separacion de dos liquidos inmiscibles.\n\n-Fabricado en vidrio bosrosilicato 3.3 de alta calidad y resistencia quimica\n\n-Con tapa de PE y LLave de PTFE\n\n-Cumple la norma ISO 4800.",
+    "name": "Polisorbato 80",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "El Polisorbato 80, conocido también como Tween 80, es un tensioactivo no iónico ampliamente utilizado en diversas industrias, desde la farmacéutica hasta la alimentaria y cosmética. Su función principal es actuar como un emulsionante, estabilizador y solubilizante.\n\nSu nombre químico completo es «Polisorbato 80» y se clasifica bajo la serie de polisorbatos, que son ésteres del sorbitano y ácidos grasos.",
     "images": [
       {
-        "imageFile": "prod11.jpg"
+        "imageFile": "prod7.webp"
       }
     ]
   },
   {
-    "name": "Embudo de Vidrio para Solidos",
-    "category": "daa53a61-06d4-41d5-9fae-08f50ff6dec1",
-    "body": "Embudo de vidrio para solidos o embudo de vidrio para polvo\n\n-Fabricado en vidrio borosilicato 3.3.\n\n-Cumple con ASTM E 438.\n\n-Conforme a ASTM E-1095\n\n-con borde y vastago pulidos al fuego.",
+    "name": "Polisorbato 60 (Tween 60)",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "El Polisorbato 60, conocido comercialmente como Tween 60, es un surfactante no iónico ampliamente utilizado en diversas industrias debido a sus propiedades emulsionantes y estabilizantes.\n\nSu capacidad para formar y estabilizar emulsiones lo convierte en un ingrediente crucial ya que es un surfactante no iónico utilizado ampliamente en la industria de cosméticos, farmacéutica y alimentaria.",
     "images": [
       {
-        "imageFile": "prod12.jpg"
+        "imageFile": "prod7.webp"
+      }
+    ]
+  },
+  {
+    "name": "Polisorbato Tween 20",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "El Polisorbato 20, conocido comercialmente como Tween 20, es un tipo de surfactante no iónico que se utiliza en una variedad de industrias debido a sus propiedades emulsificantes y solubilizantes.\n\nSu nombre se deriva de su estructura química y su función en la formulación de productos, donde «Polisorbato» hace referencia a su composición basada en sorbitano y polietilenglicol, y «Tween» es una abreviatura de «tweening» (intercalado o intermedio en inglés), que refleja su papel en la estabilización de mezclas.",
+    "images": [
+      {
+        "imageFile": "prod7.webp"
+      }
+    ]
+  },
+  {
+    "name": "Policloruro de Aluminio",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "El Policloruro de Aluminio (PACL) es un compuesto químico inorgánico utilizado principalmente en el tratamiento de agua y en diversas aplicaciones industriales. Es una mezcla de cloruros de aluminio y aluminio hidroxilado que actúa como un agente coagulante en la clarificación del agua.\n\nEl PACL es una forma de cloruro de aluminio con una estructura compleja. Su fórmula general puede representarse como [Al2​(OH)n​(Cl)6−n​].",
+    "images": [
+      {
+        "imageFile": "prod8.webp"
+      }
+    ]
+  },
+  {
+    "name": "Poliacrilamida Aniónica",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "La poliacrilamida aniónica es un polímero sintético que se utiliza en una variedad de aplicaciones industriales y ambientales debido a sus propiedades únicas.\n\nEste polímero se forma a partir de la acrilamida, un compuesto químico que, al ser polimerizado, produce un material con excelentes características para numerosas aplicaciones.",
+    "images": [
+      {
+        "imageFile": "prod8.webp"
+      }
+    ]
+  },
+  {
+    "name": "Plombagina",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "La plombagina, también conocida como grafito, es una forma alotrópica del carbono, caracterizada por su estructura cristalina en capas.\n\nA diferencia de otros alótropos del carbono, como el diamante, donde los átomos de carbono están fuertemente unidos en una red tridimensional, la plombagina tiene una estructura plana en la que los átomos de carbono se organizan en capas paralelas de anillos hexagonales.",
+    "images": [
+      {
+        "imageFile": "prod8.webp"
+      }
+    ]
+  },
+  {
+    "name": "Pirofosfato Ácido de Sodio FG",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "El Pirofosfato Ácido de Sodio FG (SAPP, por sus siglas en inglés) es una sal inorgánica compuesta por sodio, hidrógeno, fósforo y oxígeno. Su apariencia física es la de un polvo blanco, cristalino e inodoro, con una alta solubilidad en agua y un pH ligeramente ácido.\n\nEl término «FG» significa Food Grade o grado alimenticio, lo que indica que este compuesto cumple con estrictos estándares de pureza y seguridad para ser utilizado en la producción de alimentos.",
+    "images": [
+      {
+        "imageFile": "prod8.webp"
+      }
+    ]
+  },
+  {
+    "name": "Pirofosfato Ácido de Sodio",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "El Pirofosfato Ácido de Sodio (conocido por sus siglas en inglés SAPP, Sodium Acid Pyrophosphate) es un compuesto químico inorgánico que se clasifica como una sal de sodio derivada del ácido pirofosfórico.\n\nSu fórmula química es Na₂H₂P₂O₇. Se presenta como un polvo blanco, inodoro y cristalino, con un sabor ligeramente ácido, que es altamente soluble en agua, pero insoluble en alcohol.",
+    "images": [
+      {
+        "imageFile": "prod8.webp"
+      }
+    ]
+  },
+  {
+    "name": "Piña Deshidratada en Rodajas",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "La piña deshidratada en rodajas es un producto alimenticio obtenido a partir de la fruta fresca de la piña, conocida científicamente como Ananas comosus.\n\nEste proceso implica cortar la piña en rodajas finas y someterlas a un proceso de deshidratación, cuyo objetivo es eliminar gran parte del contenido de agua de la fruta, preservando sus características nutricionales y organolépticas (sabor, aroma, textura) durante un período más prolongado que la fruta fresca.",
+    "images": [
+      {
+        "imageFile": "prod7.webp"
+      }
+    ]
+  },
+  {
+    "name": "Piña Deshidratada en Cubitos",
+    "category": "5e0bf16a-78c6-48d1-a25a-c5bc3adb7e80",
+    "body": "La piña deshidratada en cubitos es un producto alimenticio elaborado a partir de la piña fresca (Ananas comosus), la cual es sometida a un proceso de deshidratación para eliminar la mayor parte de su contenido de agua, transformándola en pequeños trozos o cubos.\n\nEste proceso permite concentrar los sabores y nutrientes de la fruta, preservando su dulzura natural y ofreciendo una textura masticable y firme.",
+    "images": [
+      {
+        "imageFile": "prod7.webp"
       }
     ]
   }

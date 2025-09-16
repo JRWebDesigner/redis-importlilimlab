@@ -63,7 +63,7 @@ export default function ProductosPage() {
     }
   ];
 
-  const categories = ['Todas', 'Reactivos e Insumos', 'Material de Vidrio', 'Equipos de Análisis', 'Reactivos de Grado Industrial', ''];
+  const categories = ['Todas', 'Reactivos y Químicos', 'Material de Vidrio', 'Equipos de Análisis', 'Reactivos de Grado Industrial', ''];
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todas');
 
