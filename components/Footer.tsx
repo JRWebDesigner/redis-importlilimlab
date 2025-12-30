@@ -40,7 +40,7 @@ export default function Footer(){
                 <li>Lun - Vie: 9:00 - 19:00 <br />
 Cerrado fin de semana</li>
                 <li>Email: info@importlilimlab.com</li>
-                <li>WhatsApp:+591 62437743</li>
+                <li>WhatsApp:+591 76265987</li>
               </ul>
             </div>
           </div>
