@@ -45,7 +45,7 @@ export default function HomePage() {
             <div className="flex justify-between items-center p-6 border-b border-gray-100">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-blue-600 font-bold text-lg">!</span>
+                  <span className="text-green-600 font-bold text-lg">!</span>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900">Aviso Importante</h3>
@@ -70,7 +70,7 @@ export default function HomePage() {
                   </svg>
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">Estamos cambiando de número</h2>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 mb-4">
                   Para brindarte un mejor servicio, hemos actualizado nuestro número de contacto.
                 </p>
               </div>
@@ -80,7 +80,7 @@ export default function HomePage() {
                 <p className="text-sm text-gray-500 mb-2">Nuevo número de contacto:</p>
                 <a 
                   href="tel:59176265987" 
-                  className="text-2xl font-bold text-blue-700 hover:text-blue-800 transition-colors block"
+                  className="text-2xl font-bold text-green-700 hover:text-green-800 transition-colors block"
                 >
                   +591 762 65987
                 </a>
@@ -97,14 +97,6 @@ export default function HomePage() {
                   </div>
                   <p className="text-gray-700">WhatsApp disponible en el mismo número</p>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <p className="text-gray-700">Atención personalizada inmediata</p>
-                </div>
               </div>
 
               {/* Botones de acción */}
@@ -113,7 +105,7 @@ export default function HomePage() {
                   onClick={() => {
                     window.location.href = 'tel:59176265987';
                   }}
-                  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
+                  className="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
