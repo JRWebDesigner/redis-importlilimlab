@@ -38,7 +38,7 @@ export default function CTA(){
             viewport={{ once: true }}
           >
             <Button size="lg" variant="secondary" className="bg-white text-lime-600 hover:bg-gray-100">
-              <Link href="https://wa.link/ryfuv1" className="w-full h-full flex items-center">Consultar por WhatsApp</Link>
+              <Link href="https://wa.link/s7ujnz" className="w-full h-full flex items-center">Consultar por WhatsApp</Link>
             </Button>
           </motion.div>
         </div>

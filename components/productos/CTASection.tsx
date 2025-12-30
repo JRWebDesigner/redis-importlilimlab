@@ -19,7 +19,7 @@ export default function CTASection() {
           Contamos con una amplia red de fabricantes mundiales. Contáctanos para productos específicos.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="https://wa.link/ryfuv1" target='_blank'>
+          <Link href="https://wa.link/s7ujnz" target='_blank'>
             <Button size="lg" variant="secondary" className="bg-white text-green-600 hover:bg-gray-100">
                 Solicitar Cotización
             </Button>
