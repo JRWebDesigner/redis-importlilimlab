@@ -25,7 +25,7 @@ export default function ProductDetailModal({ product }: { product: any }) {
             </DialogDescription>
           </DialogHeader>
           <div className="flex space-x-4 items-center justify-center">
-            <Link href={`https://wa.me/+59176293693?text=Muy buen dia, me gustaria tener mas informacion sobre: ${product.name}`} target='_blank'>
+            <Link href={`https://wa.me/+59176265987?text=Muy buen dia, me gustaria tener mas informacion sobre: ${product.name}`} target='_blank'>
               <Button className="flex-1 bg-green-600 hover:bg-green-700">
                 Consultar por WhatsApp
               </Button>
