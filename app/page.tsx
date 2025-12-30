@@ -12,7 +12,7 @@ export default function HomePage() {
 
   // Opcional: Cerrar modal con tecla ESC
   useEffect(() => {
-    const handleEscKey = (e) => {
+    const handleEscKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setShowModal(false);
     };
     
@@ -39,7 +39,7 @@ export default function HomePage() {
           {/* Modal en el centro */}
           <div 
             className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-auto transform transition-all"
-            onClick={(e) => e.stopPropagation()} // Prevenir cierre al hacer clic dentro
+            onClick={(e: React.MouseEvent) => e.stopPropagation()} // Prevenir cierre al hacer clic dentro
           >
             {/* Encabezado del modal */}
             <div className="flex justify-between items-center p-6 border-b border-gray-100">
