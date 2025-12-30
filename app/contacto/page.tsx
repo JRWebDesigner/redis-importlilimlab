@@ -47,7 +47,7 @@ export default function ContactoPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="bg-white text-green-900 hover:bg-gray-100">
-              <Link href="https://wa.link/ryfuv1" className="w-full h-full flex items-center">Consultar por WhatsApp</Link>
+              <Link href="https://wa.link/s7ujnz" className="w-full h-full flex items-center">Consultar por WhatsApp</Link>
             </Button>
           </div>
         </div>
