@@ -4,6 +4,7 @@ import Hero from '@/components/home/Hero'
 import Features from '@/components/home/Features'
 import Categorys from '@/components/home/Categorys'
 import MisionVision from '@/components/home/MisionVision'
+import MarcasSlider from '@/components/home/MarcasSlider'
 import CTA from '@/components/home/CTA'
 import { X } from 'lucide-react';
 
@@ -127,8 +128,8 @@ export default function HomePage() {
       {/* Contenido principal */}
       <div className={`${showModal ? 'opacity-30' : 'opacity-100'} transition-opacity duration-300`}>
         <Hero />
-        <Features />
         <Categorys />
+        <MarcasSlider />
         <MisionVision />
         <CTA />
       </div>

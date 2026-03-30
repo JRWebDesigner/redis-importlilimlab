@@ -1,0 +1,6 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#f3f4f6"/>
+  <path d="M 60 120 L 100 60 L 140 120" fill="none" stroke="#ec4899" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="60" y1="120" x2="140" y2="120" stroke="#ec4899" stroke-width="3"/>
+  <text x="100" y="165" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#ec4899">Agilent</text>
+</svg>

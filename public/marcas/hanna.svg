@@ -1,0 +1,5 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#f3f4f6"/>
+  <rect x="50" y="50" width="100" height="100" rx="15" fill="none" stroke="#06b6d4" stroke-width="3"/>
+  <text x="100" y="110" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#06b6d4">HANNA</text>
+</svg>
