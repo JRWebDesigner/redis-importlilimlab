@@ -148,17 +148,6 @@ export default function BrandsSlider() {
                   >
                     {brand.logo}
                   </motion.div>
-
-                  {/* Nombre */}
-                  <h3 className="text-center font-bold text-white group-hover:text-lime-300 transition-colors text-sm md:text-base">
-                    {brand.name}
-                  </h3>
-
-                  {/* Descripción pequeña */}
-                  <p className="text-xs text-gray-400 text-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    {brand.category}
-                  </p>
-
                   {/* Borde animado */}
                   <motion.div
                     className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-lime-400 to-emerald-400 opacity-0 group-hover:opacity-20 -z-10 blur-sm"
