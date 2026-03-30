@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { Sparkles } from 'lucide-react'
 
 const containerVariants = {
@@ -11,7 +11,7 @@ const containerVariants = {
       delayChildren: 0.3,
     },
   },
-};
+} satisfies Variants;
 
 const itemVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -20,10 +20,10 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: "easeOut",
+      ease: "easeOut" as const,
     },
   },
-};
+} satisfies Variants;
 
 export default function MisionVision(){
   const sections = [
