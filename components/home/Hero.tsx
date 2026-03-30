@@ -1,7 +1,7 @@
 "use client"
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-cube';
@@ -25,7 +25,7 @@ const containerVariants = {
       delayChildren: 0.3,
     },
   },
-};
+} satisfies Variants;
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -34,10 +34,10 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: "easeOut",
+      ease: "easeOut" as const,
     },
   },
-};
+} satisfies Variants;
 
 const floatingVariants = {
   animate: {
@@ -45,10 +45,10 @@ const floatingVariants = {
     transition: {
       duration: 4,
       repeat: Infinity,
-      ease: "easeInOut",
+      ease: "easeInOut" as const,
     },
   },
-};
+} satisfies Variants;
 
 const scaleVariants = {
   animate: {
@@ -57,10 +57,10 @@ const scaleVariants = {
     transition: {
       duration: 3,
       repeat: Infinity,
-      ease: "easeInOut",
+      ease: "easeInOut" as const,
     },
   },
-};
+} satisfies Variants;
 
 const rotateVariants = {
   animate: {
@@ -68,10 +68,10 @@ const rotateVariants = {
     transition: {
       duration: 8,
       repeat: Infinity,
-      ease: "linear",
+      ease: "linear" as const,
     },
   },
-};
+} satisfies Variants;
 
 // Blob decorativo
 const BlobDecoration = ({ position, delay }: { position: string, delay: number }) => (
@@ -296,5 +296,3 @@ export default function Hero() {
     </section>   
   );
 }
-
-
