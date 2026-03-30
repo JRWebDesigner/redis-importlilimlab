@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/autoplay'
@@ -16,16 +16,16 @@ const containerVariants = {
       delayChildren: 0.2,
     },
   },
-}
+} satisfies Variants
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    transition: { duration: 0.6, ease: 'easeOut' as const },
   },
-}
+} satisfies Variants
 
 export default function MarcasSlider() {
   return (
