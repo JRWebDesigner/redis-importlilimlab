@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { brands } from '@/lib/brands'
 import { Sparkles, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -14,7 +14,7 @@ const containerVariants = {
       delayChildren: 0.3,
     },
   },
-};
+} satisfies Variants;
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -23,10 +23,10 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: "easeOut" as const, // ✅ Usamos as const para el tipo literal
     },
   },
-};
+} satisfies Variants;
 
 export default function MarcasPage() {
   return (
