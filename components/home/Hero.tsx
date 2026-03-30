@@ -183,8 +183,8 @@ export default function Hero() {
                   size="lg"
                   className="w-full sm:w-auto bg-gradient-to-r from-lime-500 to-emerald-500 hover:from-lime-600 hover:to-emerald-600 text-white font-bold text-base shadow-lg shadow-lime-500/50 hover:shadow-lime-500/75 transition-all duration-300"
                 >
-                  <Link href="/productos" className="w-full h-full flex items-center justify-center gap-2">
-                    <span>Ver Producto</span>
+                  <Link href="/marcas" className="w-full h-full flex items-center justify-center gap-2">
+                    <span>Ver Marcas</span>
                     <ArrowRight className="w-5 h-5" />
                   </Link>
                 </Button>
@@ -196,7 +196,7 @@ export default function Hero() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-2 border-lime-500/50 text-lime-300 hover:bg-lime-500/10 hover:border-lime-400 font-bold text-base backdrop-blur-sm transition-all duration-300"
+                  className="w-full sm:w-auto border-2 border-lime-500/50 hover:bg-lime-500/10 hover:border-lime-400 font-bold text-base backdrop-blur-sm transition-all duration-300"
                 >
                   <Link href="/contacto" className="w-full h-full flex items-center justify-center gap-2">
                     <span>Contactar</span>
