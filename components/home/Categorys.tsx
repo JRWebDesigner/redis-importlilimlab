@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { Sparkles } from 'lucide-react'
 import Link from 'next/link'
 
@@ -35,7 +35,7 @@ const containerVariants = {
       delayChildren: 0.2,
     },
   },
-};
+} satisfies Variants;
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -44,10 +44,10 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: "easeOut" as const, // ✅ Corregido con as const
     },
   },
-};
+} satisfies Variants;
 
 export default function Categorys(){
   return(
@@ -162,7 +162,7 @@ export default function Categorys(){
                     whileHover={{ scale: 1.08 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <a href={`https://wa.me/59176265987?text=Hola%20deseo%20más%20información%20sobre%20${category.name}`} target="_blank" rel="noopener noreferrer">
+                    <a href={`https://wa.me/59176265987?text=Hola%20deseo%20más%20información%20sobre%20${category.title}`} target="_blank" rel="noopener noreferrer">
                       <button className="px-10 py-3 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-green-600 transition-all duration-300 backdrop-blur-sm hover:backdrop-blur-lg">
                         Contactar
                       </button>
@@ -241,4 +241,3 @@ export default function Categorys(){
     </section>
   )
 }
-
