@@ -7,27 +7,32 @@ const categorys = [
   {
     title: "Reactivos Quimicos",
     background: "/marcas/marca12.jpg",
-    color: "from-blue-900/90 via-blue-600/70 to-blue-400/50"
+    color: "from-blue-900/90 via-blue-600/70 to-blue-400/50",
+    hoverColor: "hover:text-blue-600"
   },
   {
     title: "Estudio de Suelos",
     background: "/marcas/marca2.jpg",
-    color: "from-amber-900/90 via-amber-600/70 to-amber-400/50"
+    color: "from-amber-900/90 via-amber-600/70 to-amber-400/50",
+    hoverColor: "hover:text-amber-600"
   },
   {
-    title: "Incubadoras y Estufas",
+    title: "Envasadoras",
     background: "/marcas/marca4.jpg",
-    color: "from-red-900/90 via-red-600/70 to-red-400/50"
+    color: "from-red-900/90 via-red-600/70 to-red-400/50",
+    hoverColor: "hover:text-red-600"
   },
   {
     title: "Balanzas",
     background: "/marcas/marca5.jpg",
-    color: "from-purple-900/90 via-purple-600/70 to-purple-400/50"
+    color: "from-purple-900/90 via-purple-600/70 to-purple-400/50",
+    hoverColor: "hover:text-purple-600"
   },
   {
     title: "Dispositivos",
     background: "/marcas/marca7.jpg",
-    color: "from-teal-900/90 via-teal-600/70 to-teal-400/50"
+    color: "from-teal-900/90 via-teal-600/70 to-teal-400/50",
+    hoverColor: "hover:text-teal-600"
   }
 ];
 
@@ -112,7 +117,7 @@ export default function Categorys(){
               </motion.div>
 
               <h2 className="text-4xl md:text-5xl font-black text-white text-center mb-4">
-                Nuestras Categorias
+                Nuestros Servicios
               </h2>
               <motion.div
                 className="h-1 w-24 bg-white rounded-full mx-auto mb-6"
@@ -144,7 +149,7 @@ export default function Categorys(){
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className={`absolute inset-0 bg-gradient-to-b ${category.color} group-hover:opacity-80 transition-all duration-300`}></div>
-                <div className="relative z-10 h-full flex flex-col items-start justify-center p-8">
+                <div className="relative z-10 h-full flex flex-col items-start justify-start p-8">
                   <motion.h3
                     className="text-3xl md:text-4xl font-black text-white text-left mb-4"
                     initial={{ opacity: 0, y: 20 }}
@@ -163,9 +168,7 @@ export default function Categorys(){
                     whileTap={{ scale: 0.95 }}
                   >
                     <a href={`https://wa.me/59176265987?text=Hola%20deseo%20más%20información%20sobre%20${category.title}`} target="_blank" rel="noopener noreferrer">
-                      <button className="px-10 py-3 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:transition-all duration-300 backdrop-blur-sm hover:backdrop-blur-lg"
-                        style={{ hover: category.color.includes('blue') ? 'hover:text-blue-600' : category.color.includes('amber') ? 'hover:text-amber-600' : category.color.includes('red') ? 'hover:text-red-600' : 'hover:text-green-600' }}
-                      >
+                      <button className={`px-10 py-3 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white transition-all duration-300 backdrop-blur-sm hover:backdrop-blur-lg ${category.hoverColor}`}>
                         Contactar
                       </button>
                     </a>
@@ -198,7 +201,7 @@ export default function Categorys(){
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className={`absolute inset-0 bg-gradient-to-b ${category.color} group-hover:opacity-80 transition-all duration-300`}></div>
-                <div className="relative z-10 h-full flex flex-col items-start justify-center p-8">
+                <div className="relative z-10 h-full flex flex-col items-start justify-start p-8">
                   <motion.h3
                     className="text-3xl md:text-4xl font-black text-white text-left mb-4"
                     initial={{ opacity: 0, y: 20 }}
@@ -217,9 +220,7 @@ export default function Categorys(){
                     whileTap={{ scale: 0.95 }}
                   >
                     <a href={`https://wa.me/59176265987?text=Hola%20deseo%20más%20información%20sobre%20${category.title}`} target="_blank" rel="noopener noreferrer">
-                      <button className="px-10 py-3 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white transition-all duration-300 backdrop-blur-sm hover:backdrop-blur-lg"
-                        style={{ hover: category.color.includes('purple') ? 'hover:text-purple-600' : 'hover:text-teal-600' }}
-                      >
+                      <button className={`px-10 py-3 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white transition-all duration-300 backdrop-blur-sm hover:backdrop-blur-lg ${category.hoverColor}`}>
                         Contactar
                       </button>
                     </a>
