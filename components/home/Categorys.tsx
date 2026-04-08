@@ -6,23 +6,28 @@ import Link from 'next/link'
 const categorys = [
   {
     title: "Reactivos Quimicos",
-    background: "/marcas/marca12.jpg"
+    background: "/marcas/marca12.jpg",
+    color: "from-blue-900/90 via-blue-600/70 to-blue-400/50"
   },
   {
     title: "Estudio de Suelos",
-    background: "/marcas/marca2.jpg"
+    background: "/marcas/marca2.jpg",
+    color: "from-amber-900/90 via-amber-600/70 to-amber-400/50"
   },
   {
-    title: "Envubadoras",
-    background: "/marcas/marca4.jpg"
+    title: "Incubadoras y Estufas",
+    background: "/marcas/marca4.jpg",
+    color: "from-red-900/90 via-red-600/70 to-red-400/50"
   },
   {
     title: "Balanzas",
-    background: "/marcas/marca5.jpg"
+    background: "/marcas/marca5.jpg",
+    color: "from-purple-900/90 via-purple-600/70 to-purple-400/50"
   },
   {
     title: "Dispositivos",
-    background: "/marcas/marca7.jpg"
+    background: "/marcas/marca7.jpg",
+    color: "from-teal-900/90 via-teal-600/70 to-teal-400/50"
   }
 ];
 
@@ -44,7 +49,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut" as const, // ✅ Corregido con as const
+      ease: "easeOut" as const,
     },
   },
 } satisfies Variants;
@@ -81,46 +86,49 @@ export default function Categorys(){
 
       {/* Contenido */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Encabezado */}
+        {/* Grid 2x3 */}
         <motion.div 
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <motion.div
-            className="inline-flex justify-center items-center gap-2 px-4 py-2 rounded-full border border-lime-500/30 bg-lime-500/10 backdrop-blur-sm mb-6"
-            whileHover={{ scale: 1.05 }}
-          >
-            <Sparkles className="w-4 h-4 text-lime-400" />
-            <span className="text-sm font-semibold text-lime-300">Nuestras Categorías</span>
-          </motion.div>
-
-          <h2 className="text-5xl md:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-r from-lime-600 to-emerald-600 mb-4">
-            Nuestras Categorías
-          </h2>
-          <motion.div
-            className="h-1 w-32 bg-gradient-to-r from-lime-500 to-emerald-500 rounded-full mx-auto mb-6"
-            animate={{
-              scaleX: [0.8, 1.2, 0.8],
-            }}
-            transition={{ duration: 3, repeat: Infinity }}
-          ></motion.div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Explora nuestras categorías de equipamiento científico
-          </p>
-        </motion.div>
-
-        {/* Grid 2 columnas - Primeras 4 categorías */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-8 px-4 md:px-0"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 md:px-0"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {categorys.slice(0, 4).map((category, index) => (
+          {/* Card del título - Primera celda (superior izquierda) */}
+          <motion.div 
+            variants={itemVariants}
+            className="h-[250px]"
+          >
+            <motion.div
+              className="group relative h-full rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-lime-600 to-emerald-600 flex flex-col items-center justify-center p-8"
+              whileHover={{ y: -10 }}
+            >
+              <motion.div
+                className="inline-flex justify-center items-center gap-2 px-4 py-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm mb-6"
+                whileHover={{ scale: 1.05 }}
+              >
+                <Sparkles className="w-4 h-4 text-white" />
+                <span className="text-sm font-semibold text-white">Servicios</span>
+              </motion.div>
+
+              <h2 className="text-4xl md:text-5xl font-black text-white text-center mb-4">
+                Nuestras Categorias
+              </h2>
+              <motion.div
+                className="h-1 w-24 bg-white rounded-full mx-auto mb-6"
+                animate={{
+                  scaleX: [0.8, 1.2, 0.8],
+                }}
+                transition={{ duration: 3, repeat: Infinity }}
+              ></motion.div>
+              <p className="text-lg text-white text-center">
+                Equipamiento científico de alta calidad
+              </p>
+            </motion.div>
+          </motion.div>
+
+          {/* Primeras 3 categorías (posiciones 2, 3 del grid) */}
+          {categorys.slice(0, 3).map((category, index) => (
             <motion.div 
               key={index} 
               variants={itemVariants}
@@ -130,19 +138,13 @@ export default function Categorys(){
                 className="group relative h-full rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300"
                 whileHover={{ y: -10 }}
               >
-                {/* Imagen de fondo */}
                 <img
                   src={category.background}
                   alt={category.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-
-                {/* Capa de gradiente verde oscuro a claro */}
-                <div className="absolute inset-0 bg-gradient-to-b from-green-900/90 via-green-600/70 to-green-400/50 group-hover:from-green-900/80 group-hover:via-green-600/60 group-hover:to-green-400/40 transition-all duration-300"></div>
-
-                {/* Contenido */}
-                <div className="relative z-10 h-full flex flex-col items-center justify-start p-8">
-                  {/* Título alineado a izquierda */}
+                <div className={`absolute inset-0 bg-gradient-to-b ${category.color} group-hover:opacity-80 transition-all duration-300`}></div>
+                <div className="relative z-10 h-full flex flex-col items-start justify-center p-8">
                   <motion.h3
                     className="text-3xl md:text-4xl font-black text-white text-left mb-4"
                     initial={{ opacity: 0, y: 20 }}
@@ -152,8 +154,6 @@ export default function Categorys(){
                   >
                     {category.title}
                   </motion.h3>
-
-                  {/* Botón elegante y minimalista */}
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -163,14 +163,14 @@ export default function Categorys(){
                     whileTap={{ scale: 0.95 }}
                   >
                     <a href={`https://wa.me/59176265987?text=Hola%20deseo%20más%20información%20sobre%20${category.title}`} target="_blank" rel="noopener noreferrer">
-                      <button className="px-10 py-3 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-green-600 transition-all duration-300 backdrop-blur-sm hover:backdrop-blur-lg">
+                      <button className="px-10 py-3 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:transition-all duration-300 backdrop-blur-sm hover:backdrop-blur-lg"
+                        style={{ hover: category.color.includes('blue') ? 'hover:text-blue-600' : category.color.includes('amber') ? 'hover:text-amber-600' : category.color.includes('red') ? 'hover:text-red-600' : 'hover:text-green-600' }}
+                      >
                         Contactar
                       </button>
                     </a>
                   </motion.div>
                 </div>
-
-                {/* Efecto shine hover */}
                 <motion.div
                   className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
                   style={{
@@ -180,53 +180,60 @@ export default function Categorys(){
               </motion.div>
             </motion.div>
           ))}
-        </motion.div>
 
-        {/* Categoría 5 - Centrada sola */}
-        <motion.div 
-          className="max-w-2xl md:max-w-xl mx-auto px-4 md:px-0"
-          variants={itemVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <motion.div
-            className="h-[250px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
-            whileHover={{ y: -10 }}
-          >
-            {/* Categoría 5 */}
-            <div
-              className="group relative h-full rounded-2xl overflow-hidden cursor-pointer"
+          {/* Siguientes 2 categorías (fila 2, posiciones 1 y 2 del grid) */}
+          {categorys.slice(3, 5).map((category, index) => (
+            <motion.div 
+              key={index + 3} 
+              variants={itemVariants}
+              className="h-[250px]"
             >
-              <img
-                src={categorys[4].background}
-                alt={categorys[4].title}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-green-900/90 via-green-600/70 to-green-400/50 group-hover:from-green-900/80 group-hover:via-green-600/60 group-hover:to-green-400/40 transition-all duration-300"></div>
-              <div className="relative z-10 h-full flex flex-col items-start justify-start p-8">
-                <h3 className="text-3xl md:text-4xl font-black text-white text-left mb-4">
-                  {categorys[4].title}
-                </h3>
-                <motion.div
-                  whileHover={{ scale: 1.08 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Link href="/contacto">
-                    <button className="px-10 py-3 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-green-600 transition-all duration-300 backdrop-blur-sm hover:backdrop-blur-lg">
-                      Contactar
-                    </button>
-                  </Link>
-                </motion.div>
-              </div>
               <motion.div
-                className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
-                style={{
-                  background: 'linear-gradient(135deg, transparent, rgba(255,255,255,0.3), transparent)',
-                }}
-              ></motion.div>
-            </div>
-          </motion.div>
+                className="group relative h-full rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300"
+                whileHover={{ y: -10 }}
+              >
+                <img
+                  src={category.background}
+                  alt={category.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className={`absolute inset-0 bg-gradient-to-b ${category.color} group-hover:opacity-80 transition-all duration-300`}></div>
+                <div className="relative z-10 h-full flex flex-col items-start justify-center p-8">
+                  <motion.h3
+                    className="text-3xl md:text-4xl font-black text-white text-left mb-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    {category.title}
+                  </motion.h3>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.08 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <a href={`https://wa.me/59176265987?text=Hola%20deseo%20más%20información%20sobre%20${category.title}`} target="_blank" rel="noopener noreferrer">
+                      <button className="px-10 py-3 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white transition-all duration-300 backdrop-blur-sm hover:backdrop-blur-lg"
+                        style={{ hover: category.color.includes('purple') ? 'hover:text-purple-600' : 'hover:text-teal-600' }}
+                      >
+                        Contactar
+                      </button>
+                    </a>
+                  </motion.div>
+                </div>
+                <motion.div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
+                  style={{
+                    background: 'linear-gradient(135deg, transparent, rgba(255,255,255,0.3), transparent)',
+                  }}
+                ></motion.div>
+              </motion.div>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
 

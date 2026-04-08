@@ -10,7 +10,7 @@ export const brands = [
   },
   {
     id: 2,
-    name: "Pisos",
+    name: "Estudio de Suelos",
     logo: "/marcas/marca2.jpg",
     category: "Equipos de Medición",
     description: "Especialista en cromatografía y espectrofotometría",
