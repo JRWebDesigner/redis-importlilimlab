@@ -11,25 +11,25 @@ const categorys = [
     hoverColor: "hover:text-blue-600"
   },
   {
-    title: "Estudio de Suelos",
+    title: "Suelos",
     background: "/marcas/marca2.jpg",
     color: "from-amber-900/90 via-amber-600/70 to-amber-400/50",
     hoverColor: "hover:text-amber-600"
   },
   {
-    title: "Envasadoras",
+    title: "Hornos y Estufas",
     background: "/marcas/marca4.jpg",
     color: "from-red-900/90 via-red-600/70 to-red-400/50",
     hoverColor: "hover:text-red-600"
   },
   {
-    title: "Balanzas",
+    title: "Equipos de Laboratorio",
     background: "/marcas/marca5.jpg",
     color: "from-purple-900/90 via-purple-600/70 to-purple-400/50",
     hoverColor: "hover:text-purple-600"
   },
   {
-    title: "Dispositivos",
+    title: "Vidrieria",
     background: "/marcas/marca7.jpg",
     color: "from-teal-900/90 via-teal-600/70 to-teal-400/50",
     hoverColor: "hover:text-teal-600"
